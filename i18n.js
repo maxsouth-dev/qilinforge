@@ -24,7 +24,7 @@ es: {
   "hero.cta2": "Sumar tu organización",
 
   "qes.eyebrow": "Qué es Qilin Forge",
-  "qes.title": "Las <b>verdaderas alianzas</b> se funden, estructuran y forjan a partir de <b>energía viva e intencionada</b>.",
+  "qes.title": "Las <b>verdaderas alianzas</b> se funden, estructuran y forjan a partir de <b>energía viva</b> e <b>intencionada</b>.",
   "qes.p1": "En la mitología china, el Qilin, o también llamado unicornio chino, no es un símbolo de suerte aleatoria; es una criatura que se manifiesta ante la llegada de sabias mentes que alterarán el curso de la historia. Su aparición es un presagio de prosperidad, serenidad y longevidad. Es una criatura profundamente benevolente que no daña a ningún ser vivo, ni siquiera al pasto bajo sus pezuñas. Está estrechamente asociada con los valores de justicia, sabiduría y virtud.",
   "qes.p2": "La fragua es un hogar de fuegos donde la materia se calienta a altas temperaturas para poder ser maleable y forjarse a través del calor, tiempo y trabajo. El metal deja de ser materia y se convierte en herramienta. Entendemos que las oportunidades de mayor impacto se moldean con visión a largo plazo, confianza y presencia real.",
 
@@ -254,7 +254,7 @@ zh: {
   "hero.cta2": "加入组织合作",
 
   "qes.eyebrow": "什么是Qilin Forge",
-  "qes.title": "<b>真正的联盟</b>并非偶然，而是在<b>鲜活而有意的能量</b>中熔炼、构建与锻造而成。",
+  "qes.title": "<b>真正的联盟</b>并非偶然，而是在<b>鲜活</b>而<b>有意的能量</b>中熔炼、构建与锻造而成。",
   "qes.p1": "在中国神话中，麒麟，又称中国独角兽，并非随机的幸运象征，而是在能够改变历史进程的智者到来之前显现的神兽。它的出现预示着繁荣、安宁与长寿。麒麟性情至仁，不伤害任何生灵，连蹄下的青草也不践踏。它与公正、智慧与德行紧密相连。",
   "qes.p2": "锻炉是炉火之所，物料在高温中变得可塑，经由热度、时间与锤炼而成形。金属不再只是物料，而成为工具。我们深知，最具影响力的机遇需要以长远眼光、信任与真实的在场来塑造。",
 

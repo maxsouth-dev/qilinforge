@@ -311,7 +311,7 @@ function burst(x, y) {
   }
 }
 document.addEventListener('click', e => {
-  const b = e.target.closest('.btn--mint');
+  const b = e.target.closest('.btn--gold');
   if (b) burst(e.clientX, e.clientY);
 });
 

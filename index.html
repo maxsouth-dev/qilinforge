@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=3">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='none' stroke='%23C3001D' stroke-width='8'/><circle cx='50' cy='50' r='16' fill='%23C3001D'/></svg>">
 </head>
 <body>
@@ -168,6 +168,7 @@
   <div class="ventana" data-nav="red">
     <div class="ventana__pattern" aria-hidden="true"></div>
     <article class="card reveal tilt">
+      <svg class="card__plane" viewBox="0 0 144 120" aria-hidden="true"><path d="M136,60 L4,6 L52,60 Z"/><path class="card__plane-ala" d="M136,60 L52,60 L4,114 Z"/></svg>
       <h3 class="card__title" data-i18n-html="ventana.title">Noviembre 2026 abre<br>una <b>ventana clave</b></h3>
       <p data-i18n="ventana.p1">China representa el 16,5% del PBI global. Es líder en inversión extranjera directa y opera en la vanguardia de inteligencia artificial, blockchain, robótica, biotecnología y demás industrias. Es, además, el mercado de adopción tecnológica más agresivo del planeta.</p>
       <p data-i18n="ventana.p2">La confluencia de la CIIE, la Hongqiao Tech Week y la China Hi-Tech Fair concentra en pocas semanas una gran densidad de actores, capital y decisiones del ecosistema tecnológico chino.</p>
@@ -178,9 +179,15 @@
       </ul>
       <p class="card__claim serif" data-i18n="ventana.claim">Combinar el talento innovador argentino con la escala, la capacidad de manufactura y el capital del mercado chino.</p>
       <div class="route" aria-hidden="true">
-        <span class="route__line"><i></i></span>
+        <svg class="route__path" viewBox="0 0 214 46" aria-hidden="true">
+          <path class="route__arc" d="M7,38 Q107,-4 207,38"/>
+          <circle class="route__punto" cx="7" cy="38" r="3.6"/>
+          <circle class="route__punto" cx="207" cy="38" r="3.6"/>
+          <g class="route__avion" transform="translate(96,9)"><path d="M22,8 L0,1 L8,8 Z"/><path class="route__avion-ala" d="M22,8 L8,8 L0,15 Z"/></g>
+        </svg>
         <em>Shanghai <svg viewBox="0 0 24 24" class="ico-arrow"><path d="M4 12h15M13 6l6 6-6 6"/></svg> Shenzhen</em>
       </div>
+      <img class="card__sello" src="assets/seal.png" alt="" aria-hidden="true">
     </article>
   </div>
 </section>
@@ -326,7 +333,7 @@
 <div class="runner" id="runner" aria-hidden="true"><img src="assets/art-qilin.png" alt=""></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="i18n.js?v=2"></script>
-<script src="app.js?v=2"></script>
+<script src="i18n.js?v=3"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>

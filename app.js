@@ -72,6 +72,7 @@ function applyLang(next, animate = true) {
       if (el.dataset.wasIn === '1') el.classList.add('is-in');
     });
     buildTicker();
+    measure();   // el texto cambio de alto: la geometria y la linea de corte se recalculan
   };
 
   if (animate && !RM) {
@@ -212,6 +213,9 @@ function measure() {
     const top = sec ? absTop(sec) : 0;
     return { a, top, bot: top + (sec ? sec.offsetHeight : 0), href: a.getAttribute('href') };
   });
+  const ticket = $('.card'), corte = $('.card__events');
+  if (ticket && corte) ticket.style.setProperty('--corte', corte.offsetTop + 'px');
+
   const box = el => el ? { top: absTop(el), h: el.offsetHeight } : null;
   GEO.blocks.clover  = box(clover);
   GEO.blocks.meander = box(meander);

@@ -234,8 +234,8 @@ b{ font-weight:700; }
 
 .hero__body{ position:relative; z-index:2; }
 .hero__title{
-  margin:22px 0 0; max-width:12ch;
-  font-size:clamp(38px,min(5.75vw,8.6vh),110px); line-height:.99; letter-spacing:-.022em;
+  margin:22px 0 0; max-width:13ch;
+  font-size:clamp(34px,min(5.2vw,7.1vh),100px); line-height:.99; letter-spacing:-.022em;
   color:var(--mint);
 }
 .hero__lead{ margin-top:38px; max-width:36ch; font-size:clamp(14.5px,1.05vw,17px); line-height:1.62; color:rgba(255,255,255,.82); }
@@ -268,7 +268,7 @@ b{ font-weight:700; }
 /* ═══════════════ TESIS ═══════════════ */
 .tesis{ background:var(--red); color:#fff; padding:clamp(70px,8.4vw,162px) 0 0; position:relative; }
 .tesis .wrap{ padding-left:clamp(0px,7.6vw,146px); }
-.tesis__lead{ margin-top:26px; max-width:52ch; font-size:clamp(15px,1.06vw,17px); color:rgba(255,255,255,.94); }
+.tesis__lead{ margin-top:26px; max-width:52ch; font-size:clamp(16px,1.18vw,19px); color:rgba(255,255,255,.94); }
 .stats{ margin-top:clamp(36px,4.2vw,80px); display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(12px,1.5vw,28px); max-width:1130px; }
 .stat{
   position:relative; border:1.5px solid rgba(255,255,255,.85); border-radius:14px;
@@ -287,7 +287,7 @@ b{ font-weight:700; }
 .stat:hover::after,.stat:focus-visible::after{ opacity:1; transform:none; }
 .tesis__serif{ margin-top:clamp(46px,5.4vw,104px); font-size:clamp(22px,2.05vw,35px); line-height:1.28; color:#fff; }
 .tesis__body{ margin-top:26px; max-width:58ch; font-size:clamp(14px,.99vw,16px); color:rgba(255,255,255,.92); }
-.tesis__body.strong{ margin-top:20px; }
+.tesis__body.strong{ margin-top:20px; font-size:clamp(15px,1.06vw,17px); }
 
 /* ventana clave */
 .ventana{ position:relative; margin-top:clamp(60px,7.3vw,140px); padding:clamp(60px,9.2vw,176px) 0 clamp(60px,9.5vw,182px); }
@@ -348,27 +348,82 @@ b{ font-weight:700; }
 .card__events li:first-child{ padding-left:0; border-left:0; }
 .card__events b{ font-size:14px; }
 .card__events span{ font-size:13.5px; color:#4A4141; }
-.card__claim{ margin-top:clamp(26px,2.8vw,46px); font-size:clamp(19px,1.5vw,26px); line-height:1.32; max-width:32ch; }
-.route{ margin-top:clamp(24px,2.4vw,40px); display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
-/* Linea de vuelo: arco punteado entre las dos ciudades con el avion encima.
-   Los puntos corren hacia adelante, como la ruta trazada en un pasaje. */
-.route__path{ width:214px; height:46px; overflow:visible; }
-.route__arc{
-  fill:none; stroke:var(--ink); stroke-width:1.6; stroke-linecap:round;
-  stroke-dasharray:0.1 7; animation:vuelo 5s linear infinite;
+.card__claim{ margin-top:clamp(26px,2.8vw,46px); font-size:clamp(19px,1.5vw,26px); line-height:1.32; }
+/* `.card > p` gana por especificidad, asi que el ancho del claim hay que
+   pedirlo desde un selector igual de fuerte o no se aplica nunca. 60ch es
+   el corte de la v4: la linea parte despues de "la capacidad de". */
+.card > p.card__claim{ max-width:60ch; }
+/* ─── el vuelo: gag interactivo ─── */
+.flight{
+  margin-top:clamp(26px,2.6vw,44px); padding:6px 4px;
+  display:flex; align-items:center; gap:22px; flex-wrap:wrap;
+  background:none; border:0; text-align:left; cursor:pointer;
 }
-@keyframes vuelo{ to{ stroke-dashoffset:-70 } }
-.route__punto{ fill:var(--ink); }
-.route__avion{ fill:var(--ink); }
-.route__avion-ala{ fill-opacity:.55; }
-.route em{ font-style:normal; display:flex; align-items:center; gap:8px; font-size:12.5px; letter-spacing:.06em; }
-.route em svg{ width:14px; height:14px; }
+.flight__svg{ width:210px; height:46px; overflow:visible; flex:none; }
+/* la guia tenue siempre esta; la estela se revela con una mascara que avanza */
+.flight__trail{
+  fill:none; stroke:var(--ink); stroke-width:1.6; stroke-linecap:round;
+  stroke-dasharray:1 7; opacity:.22;
+}
+.flight__wake{
+  fill:none; stroke:var(--ink); stroke-width:1.6; stroke-linecap:round;
+  stroke-dasharray:1 7;
+}
+.flight__mask{ stroke-dasharray:210; stroke-dashoffset:210; }
+.flight:not(.flying) .flight__wake{ opacity:0; }
+.flight__dot{ fill:var(--ink); }
+.flight__dot--b{ transform-box:fill-box; transform-origin:center; }
+.flight__cities{
+  font-style:normal; display:flex; align-items:center; gap:10px;
+  font-size:13px; letter-spacing:.06em; color:var(--ink);
+}
+.flight__cities svg{ width:14px; height:14px; transition:transform .5s var(--e-out); }
+.flight__from,.flight__to{ position:relative; display:inline-block; }
+.flight__from::after,.flight__to::after{
+  content:attr(data-cn); position:absolute; inset:0; display:grid; place-items:center;
+  font-family:var(--cjk); letter-spacing:.14em; color:var(--red);
+  opacity:0; transform:translateY(45%); transition:opacity .3s, transform .4s var(--e-out);
+}
+.flight:hover .ico-arrow{ transform:translateX(4px); }
+
+/* durante el vuelo: la estela se dibuja, el avion recorre la curva,
+   los nombres se dan vuelta al chino y el destino late al llegar */
+.flight.flying .flight__mask{ animation:wakeDraw 2.1s cubic-bezier(.4,0,.3,1) forwards; }
+.flight.flying .flight__plane{ animation:planeFly 2.1s cubic-bezier(.4,0,.3,1) forwards; }
+.flight.flying .flight__dot--b{ animation:dotLand .7s var(--e-spring) 1.75s; }
+.flight.flying .flight__from::after,
+.flight.flying .flight__to::after{ opacity:1; transform:none; }
+.flight.flying .flight__from,
+.flight.flying .flight__to{ color:transparent; }
+
+@keyframes wakeDraw{ from{ stroke-dashoffset:210 } to{ stroke-dashoffset:0 } }
+@keyframes planeFly{
+  0%  { offset-distance:0%;   opacity:0 }
+  10% { opacity:1 }
+  88% { opacity:1 }
+  100%{ offset-distance:100%; opacity:0 }
+}
+@keyframes dotLand{
+  0%{ transform:scale(1); fill:var(--ink) }
+  45%{ transform:scale(2.1); fill:var(--red) }
+  100%{ transform:scale(1); fill:var(--ink) }
+}
+/* la ruta que sigue el avion = el mismo trazado que la estela */
+.flight__plane{
+  fill:var(--ink); opacity:0; transform-box:fill-box; transform-origin:center;
+  offset-path:path("M7 39 C 52 2, 158 2, 203 39");
+  offset-rotate:auto; offset-distance:0%;
+}
 
 /* ═══════════════ PAPER SECTIONS ═══════════════ */
-.paper{ position:relative; background:var(--paper); }
-.paper::before{
-  content:''; position:absolute; inset:0; pointer-events:none; opacity:.5; mix-blend-mode:multiply;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.36'/%3E%3C/svg%3E");
+/* Textura de papel real, tileada a 420 px y multiplicada sobre la base.
+   El ruido SVG que habia antes se generaba por filtro y quedaba parejo;
+   esta tiene fibra de verdad. La base va #EFEDEA y no var(--paper) porque
+   el multiply oscurece, asi se llega al mismo tono final. */
+.paper{
+  position:relative;
+  background:url(assets/paper.jpg) 0 0 / 420px 420px repeat, #EFEDEA;
+  background-blend-mode:multiply;
 }
 .mision{ padding:clamp(60px,7.5vw,144px) 0 clamp(50px,5.6vw,108px); }
 .mision__grid{ position:relative; display:grid; grid-template-columns:1fr 1.22fr; gap:clamp(30px,4.6vw,88px); align-items:start; }
@@ -425,24 +480,51 @@ b{ font-weight:700; }
 .process small{ font-size:12.5px; color:#6A6060; }
 
 /* ═══════════════ WAVES ═══════════════ */
-/* wave-mask.png is exactly six wave periods wide → it tiles seamlessly,
-   so the drift is a mask-position animation and never shows a seam. */
-.waves{ position:relative; overflow:hidden; line-height:0; isolation:isolate;
-  background:linear-gradient(180deg, var(--paper) 0 46%, var(--red) 46% 100%); }
-.wave{ height:clamp(58px,6.7vw,116px);
-  -webkit-mask-image:url(assets/wave-mask.png); mask-image:url(assets/wave-mask.png);
-  -webkit-mask-size:auto 100%;  mask-size:auto 100%;
-  -webkit-mask-repeat:repeat-x; mask-repeat:repeat-x;
-  -webkit-mask-position:0 50%;  mask-position:0 50%; }
-.wave--blue{ background:var(--blue); animation:waveL 26s linear infinite; }
-.wave--red { background:#8E0016; margin-top:-1.6%; animation:waveR 38s linear infinite; }
-@keyframes waveL{ from{-webkit-mask-position:0 50%;   mask-position:0 50%}
-                  to  {-webkit-mask-position:-1280px 50%; mask-position:-1280px 50%} }
-@keyframes waveR{ from{-webkit-mask-position:-1280px 50%; mask-position:-1280px 50%}
-                  to  {-webkit-mask-position:0 50%;   mask-position:0 50%} }
+/* Tres lineas, una sola capa, como en el original. El azul va con multiply:
+   sobre el papel se lee azul y sobre el rojo el multiplicado lo vuelve bordo,
+   asi son las mismas tres lineas cruzando el borde y no seis apiladas.
+   El mask se estira una sola vez a lo ancho, no se tilea, asi que no hay empalme. */
+.waves{
+  --wave-h:clamp(34px,9.1667vw,240px);
+  position:relative; height:var(--wave-h); overflow:hidden; isolation:isolate; line-height:0;
+  background:url(assets/paper.jpg?v=13) 0 0 / 420px 420px repeat, #EFEDEA;
+  background-blend-mode:multiply;
+}
+/* la mitad de abajo es la roja, con la misma fibra de papel encima */
+.waves::before{
+  content:''; position:absolute; z-index:0; left:0; right:0; top:44.3%; bottom:0;
+  background:url(assets/paper.jpg?v=13) 0 0 / 420px 420px repeat, var(--red);
+  background-blend-mode:multiply; pointer-events:none;
+}
+/* La ola esta dibujada a mano y no repite en ningun ancho, por eso mosaiquear
+   el archivo original partia la hebra en cada empalme. El mask que usamos son
+   siete periodos recortados de cresta a cresta mas su espejo, 1974 px: espejar
+   cierra por construccion, tanto en la union como en el wrap. Correrlo esos
+   mismos 1974 px deja el ciclo perfecto. */
+.wave{
+  position:absolute; inset:0; z-index:1; display:block;
+  background:#649BDA; mix-blend-mode:multiply;
+  -webkit-mask-image:url(assets/wave-mask.png?v=16); mask-image:url(assets/wave-mask.png?v=16);
+  -webkit-mask-size:1974px 100%; mask-size:1974px 100%;
+  -webkit-mask-repeat:repeat-x;  mask-repeat:repeat-x;
+  animation:waveDrift 40s linear infinite;
+}
+@keyframes waveDrift{ from{ -webkit-mask-position:0 50%;      mask-position:0 50% }
+                      to  { -webkit-mask-position:-1974px 50%; mask-position:-1974px 50% } }
 
 /* ═══════════════ ORGANIZADORES ═══════════════ */
-.orgs{ background:var(--red); color:#fff; padding:clamp(56px,6.6vw,126px) 0 clamp(50px,5.6vw,108px); }
+.orgs{ position:relative; overflow:hidden; color:#fff;
+  background:url(assets/paper.jpg?v=13) 0 0 / 420px 420px repeat, var(--red); background-blend-mode:multiply;
+  padding:clamp(56px,6.6vw,126px) 0 clamp(96px,12vw,240px); }
+/* la greca cierra la seccion: entra desde abajo y se apaga hacia el texto */
+.orgs__pattern{
+  position:absolute; z-index:0; left:0; right:0; bottom:-6%; height:56%; pointer-events:none; will-change:transform;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='190'%3E%3Cg fill='none' stroke='rgba(0,0,0,.075)' stroke-width='11'%3E%3Cpath d='M-14 12 H178 V178 H50 V50 H140 V140 H88 V88 H112'/%3E%3Cpath d='M12 12 V204'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:190px 190px;
+  -webkit-mask-image:linear-gradient(180deg, transparent 0%, #000 52%, #000 100%);
+          mask-image:linear-gradient(180deg, transparent 0%, #000 52%, #000 100%);
+}
+.orgs .wrap{ position:relative; z-index:1; }
 .orgs .wrap{ padding-left:clamp(0px,7.6vw,146px); }
 .orgs__lead{ margin-top:22px; font-size:clamp(13.5px,.95vw,15.5px); color:rgba(255,255,255,.86); }
 .orgs__grid{ margin-top:clamp(38px,4.5vw,86px); display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(26px,3.3vw,62px); max-width:1250px; }
@@ -450,6 +532,9 @@ b{ font-weight:700; }
 .org h3::after{ content:''; position:absolute; left:0; bottom:0; width:100%; height:1px; background:rgba(255,255,255,.85); transform:scaleX(0); transform-origin:0 50%; transition:transform .9s var(--e-out); }
 .org.is-in h3::after{ transform:scaleX(1); }
 .org__logo{ display:block; height:1.2em; width:auto; }
+/* El logo de Human Friendly es bold y llena toda su caja, asi que a la
+   misma altura pesa mas que los otros dos. Se baja para emparejarlos. */
+.org__logo--hf{ height:1.05em; }
 .org p{ margin-top:20px; font-size:clamp(13px,.92vw,15px); color:rgba(255,255,255,.9); max-width:40ch; }
 .org{ transition:transform .5s var(--e-out); }
 .org:hover{ transform:translateY(-6px); }
@@ -472,48 +557,68 @@ b{ font-weight:700; }
 /* ═══════════════ PUENTE ═══════════════ */
 .puente{
   position:relative; overflow:hidden; text-align:center; color:#fff;
-  padding:clamp(80px,10vw,190px) 0 clamp(70px,8.4vw,160px);
-  background:#000;
+  padding:clamp(80px,10vw,190px) 0 clamp(62px,7.4vw,142px);
+  background:radial-gradient(120% 100% at 50% 0%, #1C2828 0%, #0A1211 42%, #000 88%);
 }
-/* El caracter de puente detras del texto. Pide una serif china porque la
-   latina no trae el glifo y el navegador lo sustituiria por cualquier cosa. */
-.puente__glyph{
-  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-  font-family:'Noto Serif SC','Source Han Serif SC','Songti SC','SimSun',serif;
-  font-size:clamp(180px,28vw,450px); line-height:1; color:var(--mint);
-  opacity:.4; user-select:none; pointer-events:none;
-  animation:puente-latido 6s ease-in-out infinite;
-}
-@keyframes puente-latido{ 0%,100%{ opacity:.4 } 50%{ opacity:.7 } }
-.puente__inner{ position:relative; z-index:1; max-width:860px; }
-.puente__pre{ font-size:clamp(34px,5vw,72px); line-height:1.2; font-weight:400; color:#fff; }
+.puente__glow{ position:absolute; left:50%; top:46%; width:78vw; height:52vw; transform:translate(-50%,-50%); pointer-events:none;
+  background:radial-gradient(closest-side, rgba(120,240,235,.10), transparent 72%); }
+.puente__inner{ position:relative; }
+.puente__title.reveal{ transform:translateY(38px) scale(.985); transition-duration:1.25s; }
+.puente__title.reveal.is-in{ transform:none; }
+.puente__pre{ font-size:clamp(16px,1.35vw,23px); color:rgba(255,255,255,.9); }
+/* OJO: el degradado va con background-clip:text, asi que este titulo NO puede
+   llevar data-split. Los <span> con overflow:hidden del revelado por palabra
+   hacen que el recorte no pinte nada y el titulo queda invisible. */
 .puente__title{
-  margin-top:6px; font-size:clamp(40px,6.4vw,100px); line-height:1.12;
-  font-weight:400; letter-spacing:normal; color:var(--mint);
+  margin:clamp(16px,1.8vw,30px) auto 0; max-width:13ch; text-wrap:balance;
+  font-size:clamp(48px,7.6vw,146px); line-height:.94; font-weight:400; letter-spacing:-.038em;
+  background:linear-gradient(96deg,#D9FFFD 6%,#8FE6E2 38%,#4FB6B2 62%,#BFF7F4 92%);
+  background-size:220% 100%; background-position:var(--gp,0%) 0;
+  -webkit-background-clip:text; background-clip:text; color:transparent;
 }
-/* En chino los dos bloques bajan de cuerpo: el caracter ocupa mas que la letra. */
-:root[data-lang="zh"] .puente__pre{ font-size:clamp(26px,4vw,40px); }
-:root[data-lang="zh"] .puente__title{ font-size:clamp(30px,4.5vw,48px); }
+/* Ahora es una sola linea de cierre bajo un titular enorme: mas aire arriba,
+   un punto mas de cuerpo y medida mas corta para que no se lea como pie. */
+.puente__copy{ margin:clamp(36px,4.2vw,76px) auto 0; max-width:46ch;
+  font-size:clamp(15px,1.15vw,19px); line-height:1.5; color:#fff; }
 
 /* ═══════════════ SÉ PARTE ═══════════════ */
 .parte{ position:relative; overflow:hidden; color:#fff; background:#010303; padding:clamp(70px,8vw,152px) 0 clamp(70px,8.4vw,160px); }
+/* skyline real, extraido del PDF del diseno. La mascara hace el fundido
+   arriba y abajo; la opacidad lo lleva al brillo del diseno original. */
 .skyline{
-  position:absolute; inset:0; pointer-events:none; opacity:.28;
-  background:
-    linear-gradient(180deg,#010303 0%,transparent 30%,transparent 58%,#010303 96%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='700' preserveAspectRatio='xMidYMax slice'%3E%3Cg fill='none' stroke='%231E3433' stroke-width='1'%3E%3Cpath d='M60 700V430h70v270M150 700V370h58v330M230 700V300h84v400M336 700V210h60v490M420 700V330h74v370M520 700V150h96v550M640 700V270h52v430M714 700V400h64v300M800 700V180h80v520M900 700V320h60v380M980 700V240h92v460M1094 700V360h56v340M1170 700V200h74v500M1266 700V300h64v400M1352 700V420h58v280M1430 700V260h70v440M1522 700V380h62v320'/%3E%3Cpath d='M520 150l48-40 48 40M800 180l40-34 40 34M1170 200l37-32 37 32'/%3E%3Cpath d='M0 640h1600M0 590h1600' opacity='.5'/%3E%3Cpath d='M300 700l260-330 260 330M560 370v330M430 700l130-165M690 700L560 535'/%3E%3C/g%3E%3C/svg%3E") center bottom/cover no-repeat;
+  position:absolute; inset:0; pointer-events:none;
+  background:url(assets/skyline.jpg) center 72%/cover no-repeat;
+  opacity:.19;
+  -webkit-mask-image:linear-gradient(180deg, transparent 0%, #000 18%, #000 76%, transparent 100%);
+          mask-image:linear-gradient(180deg, transparent 0%, #000 18%, #000 76%, transparent 100%);
 }
 .parte__inner{ position:relative; }
-.parte__title{ margin-top:26px; max-width:24ch; font-size:clamp(22px,2.06vw,35px); line-height:1.28; font-weight:400; letter-spacing:-.022em; }
+.parte__title{ margin-top:26px; max-width:40ch; font-size:clamp(22px,2.06vw,35px); line-height:1.32; font-weight:400; letter-spacing:-.022em; }
 .parte__title b{ font-weight:700; }
 .parte__sub{ margin-top:26px; font-size:clamp(13px,.92vw,15px); color:rgba(255,255,255,.62); }
-.tracks{ margin-top:clamp(40px,4.8vw,92px); display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(26px,3.4vw,64px); max-width:1250px; }
-.track{ position:relative; display:flex; flex-direction:column; padding-right:clamp(10px,2vw,34px); padding-bottom:30px; }
+.tracks{
+  margin-top:clamp(40px,4.8vw,92px); max-width:1250px;
+  display:grid; grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto auto auto auto;
+  gap:clamp(26px,3.4vw,64px); align-items:start;
+}
+/* El parrafo se estira y empuja el boton al piso, asi los tres quedan a la
+   misma altura sin reservar lugar a mano. La fecha va en el flujo, debajo
+   del boton, no anclada al borde de la tarjeta. */
+.track{ position:relative; padding-right:clamp(10px,2vw,34px); display:flex; flex-direction:column; height:100%; }
 .track + .track::before{ content:''; position:absolute; left:calc(-1 * clamp(13px,1.7vw,32px)); top:6px; bottom:6px; width:1px; background:rgba(175,253,251,.18); }
-.track h3{ font-size:clamp(24px,2.05vw,35px); font-weight:400; letter-spacing:-.02em; color:var(--mint); }
-.track p{ margin-top:18px; margin-bottom:clamp(24px,2.6vw,46px); padding-left:34px; font-size:clamp(13px,.92vw,15px); color:rgba(255,255,255,.72); max-width:38ch; }
-.track .btn{ margin-top:auto; margin-left:34px; align-self:flex-start; }
-.track small{ position:absolute; left:34px; bottom:0; font-size:12px; color:rgba(255,255,255,.42); }
+.track h3{ padding-left:34px; font-size:clamp(24px,2.05vw,35px); font-weight:400; letter-spacing:-.02em; color:var(--mint); }
+.track p{ margin-top:18px; padding-left:34px; font-size:clamp(13px,.92vw,15px); color:rgba(255,255,255,.72); max-width:38ch; flex:1 1 auto; }
+.track .btn{ margin-top:auto; margin-left:34px; padding-top:17px; align-self:flex-start; }
+.track small{ display:block; margin-top:16px; margin-left:34px; font-size:12px; color:rgba(255,255,255,.42); }
+/* Donde hay subgrid, cada tarjeta ocupa las cuatro filas del grid padre y las
+   comparte: titulos, parrafos, botones y fechas caen a la misma altura en las
+   tres columnas, sin importar cuanto texto tenga cada una. */
+@supports (grid-template-rows: subgrid){
+  .track{ display:grid; grid-row:span 4; grid-template-rows:subgrid; align-content:start; height:auto; }
+  .track p{ flex:none; }
+  .track .btn{ margin-top:clamp(24px,2.6vw,46px); }
+}
 
 /* ═══════════════ FAQ ═══════════════ */
 .faq{ background:var(--bone); padding:clamp(60px,7.4vw,142px) 0 clamp(70px,8.5vw,162px); }
@@ -546,14 +651,14 @@ b{ font-weight:700; }
 .foot__brand{ display:flex; align-items:center; gap:11px; margin-bottom:12px; }
 .foot__brand .nav__mark{ width:34px; height:34px; }
 .foot__brand .nav__name{ font-size:19px; }
-.foot__orgs{ font-size:13.5px; color:rgba(255,255,255,.86); }
+.foot__orgs{ font-size:13.5px; color:rgba(255,255,255,.86); opacity:.86;
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:clamp(18px,2.4vw,32px); }
 .foot__route{ display:flex; align-items:center; gap:8px; font-size:13px; color:rgba(255,255,255,.6); flex-wrap:wrap; justify-content:center; }
 .foot__route svg{ width:14px; height:14px; }
 .foot__social{ display:flex; gap:22px; margin-top:22px; }
 .foot__social a{ display:grid; place-items:center; width:34px; height:34px; opacity:.62; transition:opacity .3s,transform .45s var(--e-spring); }
 .foot__social a:hover{ opacity:1; transform:translateY(-4px); }
 .foot__social svg{ width:18px; height:18px; fill:none; stroke:#fff; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
-.foot__social svg.fill{ fill:#fff; stroke:none; }
 .foot__legal{ margin-top:26px; font-size:11.5px; color:rgba(255,255,255,.38); }
 
 /* ═══════════════ EASTER EGGS ═══════════════ */
@@ -595,6 +700,7 @@ b{ font-weight:700; }
   .crit{ grid-template-columns:1fr; }
   .stats{ grid-template-columns:repeat(2,1fr); }
   .orgs__grid,.tracks{ grid-template-columns:1fr; }
+  .track h3,.track p,.track .btn,.track small{ margin-left:0; padding-left:0; }
   .track + .track::before{ display:none; }
   .track + .track{ padding-top:30px; border-top:1px solid rgba(175,253,251,.16); }
   .card__plane{ display:none; }

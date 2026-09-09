@@ -219,6 +219,7 @@ function measure() {
   const box = el => el ? { top: absTop(el), h: el.offsetHeight } : null;
   GEO.blocks.clover  = box(clover);
   GEO.blocks.meander = box(meander);
+  GEO.blocks.puente  = box(puenteTitle);
   GEO.blocks.seal    = box(sealEl);
   cacheArtRects();
 }
@@ -315,6 +316,27 @@ document.addEventListener('click', e => {
   if (b) burst(e.clientX, e.clientY);
 });
 
+/* ───────────────────────── 9b. El vuelo Shanghai → Shenzhen ─────────────────────────
+   Despega solo la primera vez que entra en pantalla, y se puede repetir
+   con el mouse, con click o con el teclado. */
+const flight = $('.flight');
+if (flight) {
+  let flying = false;
+  const takeOff = () => {
+    if (flying || RM) return;
+    flying = true;
+    flight.classList.remove('flying');
+    void flight.offsetWidth;                       // reinicia las animaciones
+    flight.classList.add('flying');
+    setTimeout(() => { flight.classList.remove('flying'); flying = false; }, 2500);
+  };
+  flight.addEventListener('click', takeOff);
+  flight.addEventListener('mouseenter', takeOff);
+  new IntersectionObserver((es, obs) => es.forEach(e => {
+    if (e.isIntersecting) { setTimeout(takeOff, 500); obs.disconnect(); }
+  }), { threshold: .8 }).observe(flight);
+}
+
 /* ───────────────────────── 10. Easter eggs ───────────────────────── */
 const toast = $('#toast');
 let toastTimer;
@@ -348,7 +370,8 @@ const progress = $('.progress i');
 const heroArt = $$('.hero__art .art');  // wrappers; imgs handle the entrance
 const heroGlow = $('.hero__glow');
 const clover = $('.ventana__pattern');
-const meander = $('.respaldo__pattern');
+const meander = $('.orgs__pattern');   // la seccion Respaldo ya no existe
+const puenteTitle = $('.puente__title');
 const sealEl = $('.seal');
 let mx = 0, my = 0, tmx = 0, tmy = 0;
 let lastY = scrollY, vel = 0;
@@ -409,6 +432,13 @@ function frame() {
     }
 
     /* the seal turns slowly with the scroll instead of spinning forever */
+    /* el degradado del titulo del puente barre con el scroll */
+    const bp = GEO.blocks.puente;
+    if (puenteTitle && onScreen(bp)) {
+      const p = clamp(1 - ((bp.top - y) + bp.h) / (vh + bp.h), 0, 1);
+      puenteTitle.style.setProperty('--gp', (p * 100).toFixed(1) + '%');
+    }
+
     const bs = GEO.blocks.seal;
     if (sealEl && onScreen(bs)) {
       const p = ((bs.top - y) + bs.h / 2 - vh / 2) / vh;

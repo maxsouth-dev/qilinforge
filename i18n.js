@@ -14,30 +14,40 @@ es: {
   "nav.mision": "Misión",
   "nav.delegacion": "Delegación",
   "nav.organizadores": "Organizadores",
-  "nav.faq": "FAQ",
+  "nav.faq": "F.A.Q.",
   "nav.aplicar": "Aplicar",
 
   "hero.title": "¿Qué sucede cuando el talento argentino se forja con el mercado más grande del mundo?",
+  "hero.lead": "Impulsamos un ecosistema de intercambio entre Argentina y China. Un corredor estratégico diseñado para potenciar la innovación, donde las startups locales encuentren la estructura para expandirse.",
   "hero.cities": "Shanghai · Shenzhen",
   "hero.date": "5 al 28 de noviembre de 2026",
   "hero.cta1": "Aplicar como startup",
   "hero.cta2": "Sumar tu organización",
+  "ticker.w1": "Soluciones",
+  "ticker.w2": "Sinergia",
+  "ticker.w3": "Vanguardia",
+  "ticker.w4": "Noviembre 2026",
+  "ticker.w5": "Innovación",
+  "ticker.w6": "Tecnología",
 
   "qes.eyebrow": "Qué es Qilin Forge",
   "qes.title": "Las <b>verdaderas alianzas</b> se funden, estructuran y forjan a partir de <b>energía viva</b> e <b>intencionada</b>.",
-  "qes.p1": "En la mitología china, el Qilin, o también llamado unicornio chino, no es un símbolo de suerte aleatoria; es una criatura que se manifiesta ante la llegada de sabias mentes que alterarán el curso de la historia. Su aparición es un presagio de prosperidad, serenidad y longevidad. Es una criatura profundamente benevolente que no daña a ningún ser vivo, ni siquiera al pasto bajo sus pezuñas. Está estrechamente asociada con los valores de justicia, sabiduría y virtud.",
-  "qes.p2": "La fragua es un hogar de fuegos donde la materia se calienta a altas temperaturas para poder ser maleable y forjarse a través del calor, tiempo y trabajo. El metal deja de ser materia y se convierte en herramienta. Entendemos que las oportunidades de mayor impacto se moldean con visión a largo plazo, confianza y presencia real.",
+  "qes.p1": "En la mitología china, el Qilin, o también llamado unicornio chino, no es un símbolo de suerte aleatoria; es una criatura que se manifiesta ante la llegada de sabias mentes que alterarán el curso de la historia. Su aparición es un presagio de prosperidad, longevidad y virtud.",
+  "qes.p2": "La fragua es donde la materia se calienta a altas temperaturas para poder ser maleable y forjarse a través del calor, tiempo y trabajo. El metal deja de ser materia y se convierte en herramienta. Entendemos que las oportunidades de mayor impacto se moldean con visión a largo plazo, confianza y presencia real.",
+  "qes.p3": "Por esto, cruzaremos el mapa con empresarios innovadores que trabajan con pasión para dar soluciones potentes a problemas significantes.",
 
   "tesis.eyebrow": "La tesis",
-  "tesis.lead": "Argentina tiene 12 unicornios, más de 1.000 startups activas y USD 400M en venture capital solo en el primer trimestre de 2026. Nuestro ecosistema tech es uno de los más maduros de Latinoamérica.",
+  "tesis.lead": "Argentina tiene uno de los ecosistemas tech más maduros de Latinoamérica: 12 unicornios, más de 1.000 startups activas y USD 400M en venture capital solo en Q1 2026. Del otro lado, China posee una cultura milenaria y una infraestructura de escala sin igual.",
   "tesis.s1": "Unicornios argentinos",
   "tesis.s2": "Startups activas",
   "tesis.s3": "Venture capital Q1 2026",
   "tesis.s4": "Del PBI global es China",
-  "tesis.claim": "Hay talento, hay tracción.",
+  "tesis.claim": "Hay talento, hay tracción.<br>Lo que cambia es la escala.",
+  "tesis.body": "El ecosistema startup argentino produce tecnología de clase mundial y está listo para competir en nuevos mercados. China ofrece el volumen, la infraestructura y la velocidad para llevar nuestras soluciones a un próximo nivel.",
+  "tesis.hook": "Qilin Forge nace por este motivo.",
 
   "ventana.title": "Noviembre 2026 abre<br>una <b>ventana clave</b>",
-  "ventana.p1": "China representa el 16,5% del PBI global. Es líder en inversión extranjera directa y opera en la vanguardia de inteligencia artificial, blockchain, robótica, biotecnología y demás industrias. Es, además, el mercado de adopción tecnológica más agresivo del planeta.",
+  "ventana.p1": "China representa ~20% del PBI global. Es líder en inversión extranjera directa y opera en la vanguardia de inteligencia artificial, blockchain, robótica, biotecnología y demás industrias. Es, además, el mercado de adopción tecnológica más agresivo del planeta.",
   "ventana.p2": "La confluencia de la CIIE, la Hongqiao Tech Week y la China Hi-Tech Fair concentra en pocas semanas una gran densidad de actores, capital y decisiones del ecosistema tecnológico chino.",
   "ventana.e1": "Feria Internacional de Importaciones de China",
   "ventana.e2": "Semana tecnológica en Shanghai",
@@ -70,8 +80,9 @@ es: {
   "orgs.o2": "Se dedica a generar oportunidades de negocio entre startups, fondos de inversión y aceleradoras.",
   "orgs.o3": "Agencia creativa y tecnológica. Aporta la dirección estratégica, la comunicación y el diseño de experiencia de toda la misión.",
 
-  "puente.pre": "No estamos organizando un viaje.",
+  "puente.pre": "No estamos organizando un evento.",
   "puente.title": "Estamos construyendo un puente.",
+  "puente.p1": "Qilin Forge no termina cuando el avión aterriza en Argentina.",
 
   "parte.eyebrow": "Sé parte",
   "parte.title": "<b>Qilin Forge</b> es un canal concreto de vinculación comercial tecnológica y el puente para que el talento argentino se integre directamente con el ecosistema de innovación chino. Posiciona a Argentina como origen de innovación, genera valor real y <b>construye una relación entre el ecosistema emprendedor de ambos países.</b>",
@@ -85,7 +96,7 @@ es: {
   "parte.t3": "Sponsors",
   "parte.d3": "Si sos una empresa o marca que quiere asociarse a una iniciativa de alto impacto con visibilidad internacional real, hay lugar en la mesa.",
   "parte.b3": "Explorar sponsorship",
-  "parte.open": "Convocatoria: 2 sept al 2 oct 2026",
+  "parte.open": "Convocatoria: 9 sept – 9 oct 2026",
 
   "faq.title": "Preguntas<br><span class='thin'>frecuentes</span>",
 
@@ -99,23 +110,21 @@ es: {
   faq: [
     { g: "Generales", items: [
       ["¿Qué es Qilin Forge?", "Es una misión de innovación y vinculación comercial tecnológica que lleva a una delegación curada de startups y empresas tecnológicas argentinas a China en noviembre de 2026. La misión atraviesa Shanghai y Shenzhen, combinando formación cultural, exposición en ferias internacionales y reuniones directas con actores estratégicos del ecosistema tecnológico chino."],
-      ["¿Cuándo es el viaje?", "Del 5 al 28 de noviembre de 2026, 23 días."],
+      ["¿Cuándo es el viaje?", "Del 5 al 28 de noviembre de 2026: 23 días en total, recorriendo dos ciudades y aprovechando la confluencia de la CIIE, la Hongqiao Tech Week y la China Hi-Tech Fair."],
       ["¿Quiénes organizan Qilin Forge?", "Tres organizaciones: Buidlers (convocatoria y curaduría de talento tech), Rootgraph (central operativa y articulación institucional) y Human Friendly (dirección estratégica y comunicación)."]
     ]},
     { g: "Para startups y empresas", items: [
-      ["¿Cómo puedo aplicar para ser parte de la delegación?", "La convocatoria abre el 2 de septiembre de 2026 y cierra el 2 de octubre de 2026. El registro se realiza a través de la plataforma de Rootgraph."],
-      ["¿Cuáles son los criterios de selección?", "Validación comercial (producto activo con tracción real), pertenencia a verticales clave (AI, Fintech, Agtech, Logistics, Hardware y Healthtech), sinergia estratégica con el ecosistema chino, y adaptación cultural (dominio fluido del inglés y capacidad de operar en dinámicas de negociación asiáticas)."],
-      ["¿Cuál es el proceso de selección?", "Registro en plataforma, entrevistas con el equipo organizador y selección final. Se seleccionará un mínimo de 5 startups."],
+      ["¿Cómo puedo aplicar para ser parte de la delegación?", "La convocatoria abre el 9 de septiembre de 2026 y cierra el 9 de octubre de 2026. El registro se realiza a través de la plataforma de Rootgraph."],
+      ["¿Cuáles son los criterios de selección?", "Cuatro: validación comercial (producto activo con tracción real), pertenencia a verticales clave (AI, Fintech, Agtech, Logistics, Hardware y Healthtech), sinergia estratégica comprobable con la infraestructura y los canales de distribución chinos, y adaptación cultural, incluyendo dominio fluido del inglés."],
+      ["¿Cuál es el proceso de selección?", "Registro en plataforma → entrevistas técnicas → selección final. Se seleccionará un mínimo de 5 startups."],
       ["¿Qué incluye la participación?", "La misión contempla distintos paquetes que pueden incluir vuelos domésticos dentro de China, alojamiento, traslados y agenda de eventos. La estructura final dependerá del nivel de financiamiento que la misión logre asegurar. Los detalles se comunicarán a los participantes seleccionados."],
-      ["¿Necesito hablar chino?", "No. El idioma de trabajo de la delegación es inglés. No se requiere conocimiento previo de mandarín."],
+      ["¿Necesito hablar chino?", "No. Se requiere dominio fluido del inglés y capacidad de adaptación a las dinámicas de negociación asiáticas."],
       ["¿Puedo participar si mi startup no es argentina?", "Qilin Forge nace como una iniciativa del ecosistema argentino. Si tu empresa opera desde otro país de Latinoamérica y tiene interés en participar, contactanos para evaluar tu caso."]
     ]},
-    { g: "Para instituciones", items: [
-      ["¿Qué tipo de apoyo buscan?", "Respaldo formal, apertura de redes, difusión y co-branding. No buscamos apoyo presupuestario. El retorno es directo: asociación con una misión de alto perfil en China, visibilidad internacional y posicionamiento en el eje de vinculación comercial tecnológica."],
-      ["¿Qué obtiene mi institución al sumarse?", "Asociación directa con una misión que tiene agenda en las ferias y empresas más relevantes de China, visibilidad ante el ecosistema emprendedor de ambos países, y participación en la construcción de un canal entre ambos países que hoy no existe en el ámbito tecnológico."],
-      ["¿Qilin Forge es un evento único o tiene continuidad?", "Tiene visión de continuidad. Uno de sus objetivos centrales es establecer un canal permanente entre ambos países post-misión, con seguimiento de acuerdos y soft-landing para las startups que avanzan. Esta primera edición es el punto de partida."]
-    ]},
-    { g: "Para sponsors", items: [
+    { g: "Para Sponsors / Instituciones", items: [
+      ["¿Qué tipo de apoyo buscan?", "Respaldo formal, apertura de redes, difusión y co-branding. El retorno es directo: asociación con una misión de alto perfil en China, visibilidad internacional y posicionamiento en el eje de vinculación comercial tecnológica."],
+      ["¿Qué obtiene mi institución al sumarse?", "Asociación directa con una misión que tiene agenda en las ferias y empresas más relevantes de China, visibilidad ante el ecosistema emprendedor de ambos países, y participación en la construcción de un canal entre ambos países."],
+      ["¿Qilin Forge es un evento único o tiene continuidad?", "Tiene visión de continuidad. Uno de sus objetivos centrales es establecer un canal permanente entre ambos países post-misión, con seguimiento de acuerdos y soft-landing para las startups que avanzan. Esta primera edición es el punto de partida."],
       ["¿Por qué patrocinar Qilin Forge?", "Porque es una oportunidad de asociar tu marca a una misión que posiciona a Argentina como origen de innovación ante el mercado más grande del mundo. Los sponsors obtienen visibilidad ante una audiencia curada de founders, inversores e instituciones de ambos países, en un contexto de alto impacto y baja saturación. Los tiers de sponsorship y sus beneficios se comunicarán próximamente."]
     ]}
   ]
@@ -129,30 +138,40 @@ en: {
   "nav.mision": "Mission",
   "nav.delegacion": "Delegation",
   "nav.organizadores": "Team",
-  "nav.faq": "FAQ",
+  "nav.faq": "F.A.Q.",
   "nav.aplicar": "Apply",
 
   "hero.title": "What happens when Argentine talent is forged with the world's largest market?",
+  "hero.lead": "We are driving an ecosystem of exchange between Argentina and China. A strategic corridor designed to boost innovation, where local startups find the structure to scale.",
   "hero.cities": "Shanghai · Shenzhen",
   "hero.date": "November 5 to 28, 2026",
   "hero.cta1": "Apply as a startup",
   "hero.cta2": "Join as an organization",
+  "ticker.w1": "Solutions",
+  "ticker.w2": "Synergy",
+  "ticker.w3": "Cutting Edge",
+  "ticker.w4": "November 2026",
+  "ticker.w5": "Innovation",
+  "ticker.w6": "Technology",
 
   "qes.eyebrow": "What is Qilin Forge",
   "qes.title": "<b>True alliances</b> are melted, structured, and forged from <b>living, intentional energy</b>.",
-  "qes.p1": "In Chinese mythology, the Qilin, also known as the Chinese unicorn, is not a symbol of random luck; it's a creature that appears before the arrival of wise minds who will alter the course of history. Its appearance is an omen of prosperity, serenity, and longevity. It is a deeply benevolent creature that harms no living being, not even the grass beneath its hooves. It is closely associated with the values of justice, wisdom, and virtue.",
-  "qes.p2": "The forge is a hearth of fire where matter is heated to high temperatures so it becomes malleable and can be shaped through heat, time, and work. Metal stops being matter and becomes a tool. We understand that the highest-impact opportunities are shaped through long-term vision, trust, and real presence.",
+  "qes.p1": "In Chinese mythology, the Qilin, also known as the Chinese unicorn, is not a symbol of random luck; it is a creature that appears before the arrival of wise minds who will alter the course of history. Its appearance is an omen of prosperity, longevity and virtue.",
+  "qes.p2": "The forge is where matter is heated to high temperatures so it becomes malleable and can be shaped through heat, time and work. Metal stops being matter and becomes a tool. We understand that the opportunities with the greatest impact are shaped through long term vision, trust and real presence.",
+  "qes.p3": "That is why we will cross the map with innovative founders who work with passion to deliver powerful solutions to significant problems.",
 
   "tesis.eyebrow": "The thesis",
-  "tesis.lead": "Argentina has 12 unicorns, over 1,000 active startups, and USD 400M in venture capital in Q1 2026 alone. Our tech ecosystem is one of the most mature in Latin America.",
+  "tesis.lead": "Argentina has one of the most mature tech ecosystems in Latin America: 12 unicorns, more than 1,000 active startups and USD 400M in venture capital in Q1 2026 alone. On the other side, China holds a culture thousands of years old and infrastructure of unmatched scale.",
   "tesis.s1": "Argentine unicorns",
   "tesis.s2": "Active startups",
   "tesis.s3": "Venture capital Q1 2026",
   "tesis.s4": "Of global GDP is China",
-  "tesis.claim": "There is talent, there is traction.",
+  "tesis.claim": "There is talent, there is traction.<br>What changes is scale.",
+  "tesis.body": "Argentina's startup ecosystem produces world class technology and is ready to compete in new markets. China offers the volume, the infrastructure and the speed to take our solutions to the next level.",
+  "tesis.hook": "Qilin Forge exists for this reason.",
 
   "ventana.title": "November 2026 opens<br>a <b>key window</b>",
-  "ventana.p1": "China accounts for 16.5% of global GDP. It leads in foreign direct investment and operates at the frontier of AI, blockchain, robotics, biotech, and beyond. It's also the most aggressive technology-adoption market on the planet.",
+  "ventana.p1": "China accounts for ~20% of global GDP. It leads in foreign direct investment and operates at the frontier of AI, blockchain, robotics, biotech, and beyond. It's also the most aggressive technology-adoption market on the planet.",
   "ventana.p2": "The convergence of the CIIE, Hongqiao Tech Week, and the China Hi-Tech Fair concentrates a high density of players, capital, and decisions in the Chinese tech ecosystem within a few weeks.",
   "ventana.e1": "China International Import Expo",
   "ventana.e2": "Shanghai tech week",
@@ -185,8 +204,9 @@ en: {
   "orgs.o2": "Focused on generating business opportunities between startups, investment funds, and accelerators.",
   "orgs.o3": "A creative and technology agency. Brings the strategic direction, communications, and experience design for the entire mission.",
 
-  "puente.pre": "We're not organizing a trip.",
+  "puente.pre": "We are not organizing an event.",
   "puente.title": "We're building a bridge.",
+  "puente.p1": "Qilin Forge does not end when the plane lands in Argentina.",
 
   "parte.eyebrow": "Be part of it",
   "parte.title": "<b>Qilin Forge</b> is a concrete channel for tech commercial ties and the bridge for Argentine talent to integrate directly with China's innovation ecosystem. It positions Argentina as a source of innovation, generates real value, and <b>builds a relationship between both countries' entrepreneurial ecosystem.</b>",
@@ -200,9 +220,9 @@ en: {
   "parte.t3": "Sponsors",
   "parte.d3": "If you're a company or brand looking to associate with a high-impact initiative with real international visibility, there's a seat at the table.",
   "parte.b3": "Explore sponsorship",
-  "parte.open": "Applications: Sept 2 to Oct 2, 2026",
+  "parte.open": "Open call: Sept 9 – Oct 9, 2026",
 
-  "faq.title": "FAQ",
+  "faq.title": "Frequently<br><span class='thin'>asked questions</span>",
 
   "foot.from": "Buenos Aires",
   "foot.to": "Shanghai · Shenzhen",
@@ -214,23 +234,21 @@ en: {
   faq: [
     { g: "General", items: [
       ["What is Qilin Forge?", "A tech innovation and commercial mission that takes a curated delegation of Argentine startups and tech companies to China in November 2026. The mission crosses Shanghai and Shenzhen, combining cultural formation, exposure at international trade fairs, and direct meetings with strategic players in China's tech ecosystem."],
-      ["When is the trip?", "November 5 to 28, 2026, 23 days."],
+      ["When is the trip?", "November 5 to 28, 2026: 23 days in total, across two cities, taking advantage of the confluence of the CIIE, Hongqiao Tech Week and the China Hi-Tech Fair."],
       ["Who organizes Qilin Forge?", "Three organizations: Buidlers (talent recruitment and curation), Rootgraph (operational HQ and institutional coordination), and Human Friendly (strategic direction and communications)."]
     ]},
     { g: "For startups and companies", items: [
-      ["How can I apply to join the delegation?", "Applications open September 2, 2026 and close October 2, 2026. Registration happens through the Rootgraph platform."],
-      ["What are the selection criteria?", "Commercial validation (active product with real traction), belonging to key verticals (AI, Fintech, Agtech, Logistics, Hardware, and Healthtech), strategic synergy with the Chinese ecosystem, and cultural readiness (fluent English and the ability to operate in Asian negotiation dynamics)."],
-      ["What's the selection process?", "Platform registration, interviews with the organizing team, and final selection. A minimum of 5 startups will be selected."],
+      ["How can I apply to join the delegation?", "Applications open September 9, 2026 and close October 9, 2026. Registration happens through the Rootgraph platform."],
+      ["What are the selection criteria?", "Four: commercial validation (active product with real traction), belonging to key verticals (AI, Fintech, Agtech, Logistics, Hardware and Healthtech), provable strategic synergy with Chinese infrastructure and distribution channels, and cultural readiness, including fluent English."],
+      ["What's the selection process?", "Platform registration → technical interviews → final selection. A minimum of 5 startups will be selected."],
       ["What does participation include?", "The mission includes different packages that may cover domestic flights within China, lodging, transfers, and the events agenda. The final structure will depend on the funding level the mission secures. Details will be communicated to selected participants."],
-      ["Do I need to speak Chinese?", "No. The delegation's working language is English. No prior Mandarin knowledge is required."],
+      ["Do I need to speak Chinese?", "No. Fluent English is required, along with the ability to adapt to Asian negotiation dynamics."],
       ["Can I participate if my startup isn't Argentine?", "Qilin Forge was born as an initiative of the Argentine ecosystem. If your company operates from another Latin American country and is interested in participating, reach out and we'll evaluate your case."]
     ]},
-    { g: "For institutions", items: [
-      ["What kind of support are you looking for?", "Formal backing, network access, promotion, and co-branding. We're not seeking budget support. The return is direct: association with a high-profile mission in China, international visibility, and positioning at the center of tech commercial ties."],
-      ["What does my institution get by joining?", "Direct association with a mission that has an agenda at China's most relevant fairs and companies, visibility before both countries' entrepreneurial ecosystems, and participation in building a channel between both countries that doesn't currently exist in tech."],
-      ["Is Qilin Forge a one-time event or does it have continuity?", "It has a vision of continuity. One of its core goals is establishing a permanent channel between both countries post-mission, with agreement follow-up and soft-landing for advancing startups. This first edition is the starting point."]
-    ]},
-    { g: "For sponsors", items: [
+    { g: "For Sponsors / Institutions", items: [
+      ["What kind of support are you looking for?", "Formal backing, network access, promotion, and co-branding. The return is direct: association with a high-profile mission in China, international visibility, and positioning at the center of tech commercial ties."],
+      ["What does my institution get by joining?", "Direct association with a mission that has an agenda at China's most relevant fairs and companies, visibility before both countries' entrepreneurial ecosystems, and participation in building a channel between both countries."],
+      ["Is Qilin Forge a one-time event or does it have continuity?", "It has a vision of continuity. One of its core goals is establishing a permanent channel between both countries post-mission, with agreement follow-up and soft-landing for advancing startups. This first edition is the starting point."],
       ["Why sponsor Qilin Forge?", "Because it's an opportunity to associate your brand with a mission that positions Argentina as a source of innovation before the world's largest market. Sponsors get visibility before a curated audience of founders, investors, and institutions from both countries, in a high-impact, low-saturation context. Sponsorship tiers and benefits will be announced soon."]
     ]}
   ]
@@ -248,26 +266,36 @@ zh: {
   "nav.aplicar": "申请",
 
   "hero.title": "当阿根廷人才与全球最大市场相锻造，会发生什么？",
+  "hero.lead": "我们正在推动阿根廷与中国之间的交流生态。一条为激发创新而设计的战略走廊，让本土初创企业在这里找到扩张所需的结构支撑。",
   "hero.cities": "上海 · 深圳",
   "hero.date": "2026年11月5日至28日",
   "hero.cta1": "以初创企业身份申请",
   "hero.cta2": "加入组织合作",
+  "ticker.w1": "解决方案",
+  "ticker.w2": "协同",
+  "ticker.w3": "前沿",
+  "ticker.w4": "2026年11月",
+  "ticker.w5": "创新",
+  "ticker.w6": "科技",
 
   "qes.eyebrow": "什么是Qilin Forge",
   "qes.title": "<b>真正的联盟</b>并非偶然，而是在<b>鲜活</b>而<b>有意的能量</b>中熔炼、构建与锻造而成。",
-  "qes.p1": "在中国神话中，麒麟，又称中国独角兽，并非随机的幸运象征，而是在能够改变历史进程的智者到来之前显现的神兽。它的出现预示着繁荣、安宁与长寿。麒麟性情至仁，不伤害任何生灵，连蹄下的青草也不践踏。它与公正、智慧与德行紧密相连。",
-  "qes.p2": "锻炉是炉火之所，物料在高温中变得可塑，经由热度、时间与锤炼而成形。金属不再只是物料，而成为工具。我们深知，最具影响力的机遇需要以长远眼光、信任与真实的在场来塑造。",
+  "qes.p1": "在中国神话中，麒麟，又称中国独角兽，并非随机的幸运象征，而是在能够改变历史进程的智者到来之前显现的神兽。它的出现预示着繁荣、长寿与德行。",
+  "qes.p2": "锻炉是物料在高温中变得可塑，经由热度、时间与锤炼而成形的地方。金属不再只是物料，而成为工具。我们深知，最具影响力的机遇需要以长远眼光、信任与真实的在场来塑造。",
+  "qes.p3": "正因如此，我们将与那些满怀热忱、致力于为重大问题提供强大解决方案的创新企业家一同跨越版图。",
 
   "tesis.eyebrow": "我们的论点",
-  "tesis.lead": "阿根廷拥有12家独角兽企业，1000多家活跃的初创公司，仅2026年第一季度就吸引了4亿美元的风险投资。我们的科技生态系统是拉美最成熟的之一。",
+  "tesis.lead": "阿根廷拥有拉美最成熟的科技生态之一：12 家独角兽企业、超过 1,000 家活跃初创公司，仅 2026 年第一季度就获得 4 亿美元风险投资。而另一端，中国拥有千年文化底蕴，以及无与伦比的规模化基础设施。",
   "tesis.s1": "阿根廷独角兽",
   "tesis.s2": "活跃初创企业",
   "tesis.s3": "2026Q1风险资本",
   "tesis.s4": "中国占全球GDP",
-  "tesis.claim": "有人才，有动能。",
+  "tesis.claim": "有人才，有动能。<br>改变格局的，是规模。",
+  "tesis.body": "阿根廷的初创生态能够产出世界级的技术，也已经准备好进入新的市场竞争。中国提供的，是把这些解决方案推向下一个量级所需要的体量、基础设施与速度。",
+  "tesis.hook": "麒麟锻造，正是为此而生。",
 
   "ventana.title": "2026年11月，<br>开启<b>关键窗口期</b>",
-  "ventana.p1": "中国占全球GDP的16.5%，是外国直接投资的领导者，在人工智能、区块链、机器人技术、生物科技等领域处于前沿，也是全球科技采用最积极的市场。",
+  "ventana.p1": "中国占全球GDP的~20%，是外国直接投资的领导者，在人工智能、区块链、机器人技术、生物科技等领域处于前沿，也是全球科技采用最积极的市场。",
   "ventana.p2": "中国国际进口博览会、虹桥科技周与中国高新技术成果交易会的交汇，在短短几周内汇聚了中国科技生态中高密度的参与者、资本与决策。",
   "ventana.e1": "中国国际进口博览会",
   "ventana.e2": "上海虹桥科技周",
@@ -300,8 +328,9 @@ zh: {
   "orgs.o2": "致力于在初创企业、投资基金和加速器之间创造商业机会。",
   "orgs.o3": "一家创意科技机构，负责整个使命的战略方向、传播与体验设计。",
 
-  "puente.pre": "我们不是在组织一次旅行。",
+  "puente.pre": "我们并不是在办一场活动。",
   "puente.title": "我们在建造一座桥梁。",
+  "puente.p1": "当飞机降落在阿根廷时，麒麟锻造并没有结束。",
 
   "parte.eyebrow": "加入我们",
   "parte.title": "<b>Qilin Forge</b>是一条具体的科技商贸连接渠道，也是阿根廷人才直接融入中国创新生态的桥梁。它将阿根廷定位为创新的源头，创造真实价值，并<b>在两国创业生态系统之间建立联系。</b>",
@@ -315,7 +344,7 @@ zh: {
   "parte.t3": "赞助商",
   "parte.d3": "如果贵公司或品牌希望与一项具有真实国际影响力的高价值举措建立联系，这里有你的席位。",
   "parte.b3": "了解赞助方案",
-  "parte.open": "申请期：2026年9月2日至10月2日",
+  "parte.open": "报名期：2026年9月9日 – 10月9日",
 
   "faq.title": "常见<br><span class='thin'>问题</span>",
 
@@ -329,23 +358,21 @@ zh: {
   faq: [
     { g: "综合", items: [
       ["什么是Qilin Forge？", "这是一项科技创新与商贸使命，将于2026年11月带领经过遴选的阿根廷初创企业和科技公司代表团前往中国。使命途经上海和深圳，融合文化培训、国际展会曝光，以及与中国科技生态战略参与者的直接会晤。"],
-      ["行程是什么时候？", "2026年11月5日至28日，为期23天。"],
+      ["行程是什么时候？", "2026年11月5日至28日：共23天，走访两座城市，正逢中国国际进口博览会、虹桥国际科技周与中国高新技术成果交易会同期举行。"],
       ["由谁组织Qilin Forge？", "三家机构共同组织：Buidlers（科技人才召集与遴选）、Rootgraph（运营总部与机构协调）以及Human Friendly（战略方向与传播）。"]
     ]},
     { g: "初创企业与公司", items: [
-      ["我如何申请加入代表团？", "申请通道于2026年9月2日开放，10月2日截止。注册通过Rootgraph平台进行。"],
-      ["遴选标准是什么？", "商业验证（具有真实市场牵引力的活跃产品）、属于关键领域（人工智能、金融科技、农业科技、物流、硬件与健康科技）、与中国生态系统的战略协同，以及文化适应力（流利英语与亚洲商业谈判能力）。"],
-      ["遴选流程是怎样的？", "平台注册、与组织团队面试、最终遴选。至少将遴选5家初创企业。"],
+      ["我如何申请加入代表团？", "申请通道于2026年9月9日开放，10月9日截止。注册通过Rootgraph平台进行。"],
+      ["遴选标准是什么？", "共四项：商业验证（具有真实市场牵引力的活跃产品）、属于关键领域（人工智能、金融科技、农业科技、物流、硬件与健康科技）、与中国基础设施及分销渠道之间可验证的战略协同，以及文化适应力，包括流利的英语。"],
+      ["遴选流程是怎样的？", "平台注册 → 技术面试 → 最终遴选。至少将遴选5家初创企业。"],
       ["参与内容包括什么？", "使命包含不同的套餐，可能涵盖中国境内的国内航班、住宿、接送以及活动议程。最终结构将取决于使命所获得的资金水平，详情将及时告知入选参与者。"],
-      ["我需要会说中文吗？", "不需要。代表团的工作语言是英语，无需具备普通话基础。"],
+      ["我需要会说中文吗？", "不需要。需要流利的英语，以及适应亚洲商业谈判节奏的能力。"],
       ["如果我的初创企业不是阿根廷企业，可以参与吗？", "Qilin Forge诞生于阿根廷生态系统的倡议。如果贵公司在拉丁美洲其他国家运营并有意参与，请联系我们评估你的情况。"]
     ]},
-    { g: "机构合作", items: [
-      ["你们寻求什么样的支持？", "正式背书、网络开放、宣传推广与联合品牌。我们不寻求预算支持。回报是直接的：与一项在中国具有高知名度的使命建立联系、获得国际曝光度，并在科技商贸领域获得定位。"],
-      ["我的机构加入后能获得什么？", "与一项在中国最具影响力的展会和企业中拥有议程的使命直接建立联系，在两国创业生态系统面前获得曝光，并参与构建当前科技领域尚不存在的两国渠道。"],
-      ["Qilin Forge是一次性活动，还是具有持续性？", "它具有持续发展的愿景。其核心目标之一是在使命结束后建立永久性的两国渠道，持续跟进协议并为不断推进的初创企业提供软着陆支持。首届使命只是起点。"]
-    ]},
-    { g: "赞助商", items: [
+    { g: "赞助商 / 机构合作", items: [
+      ["你们寻求什么样的支持？", "正式背书、网络开放、宣传推广与联合品牌。回报是直接的：与一项在中国具有高知名度的使命建立联系、获得国际曝光度，并在科技商贸领域获得定位。"],
+      ["我的机构加入后能获得什么？", "与一项在中国最具影响力的展会和企业中拥有议程的使命直接建立联系，在两国创业生态系统面前获得曝光，并参与构建两国之间的渠道。"],
+      ["Qilin Forge是一次性活动，还是具有持续性？", "它具有持续发展的愿景。其核心目标之一是在使命结束后建立永久性的两国渠道，持续跟进协议并为不断推进的初创企业提供软着陆支持。首届使命只是起点。"],
       ["为什么要赞助Qilin Forge？", "因为这是一个将贵品牌与一项使命相关联的机会，该使命将阿根廷定位为面向全球最大市场的创新源头。赞助商将在高影响力、低饱和度的背景下，获得两国创始人、投资者和机构组成的精选受众的曝光。赞助层级及权益将于近期公布。"]
     ]}
   ]

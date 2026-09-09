@@ -38,9 +38,9 @@ body{
   margin:0; background:#000; color:var(--ink);
   font-family:var(--sans); font-size:16px; line-height:1.62;
   font-weight:400; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-  overflow-x:hidden;
+  overflow-x:hidden; overflow-x:clip;
 }
-html{ scroll-behavior:smooth; scroll-padding-top:var(--nav-h); }
+html{ scroll-behavior:smooth; scroll-padding-top:var(--nav-h); overflow-x:hidden; overflow-x:clip; }
 img{ max-width:100%; display:block; }
 a{ color:inherit; text-decoration:none; }
 ul,ol{ margin:0; padding:0; list-style:none; }
@@ -199,7 +199,7 @@ b{ font-weight:700; }
 /* ═══════════════ HERO ═══════════════ */
 .hero{
   position:relative; min-height:100svh; display:flex; align-items:center;
-  padding:calc(var(--nav-h) + 4vh) 0 8vh; overflow:hidden; isolation:isolate;
+  padding:calc(var(--nav-h) + 4vh) 0 8vh; overflow:hidden; overflow:clip; isolation:isolate;
   background:
     radial-gradient(105% 80% at 60% 52%, #0C1615 0%, #04090A 46%, #000 76%),
     #000;
@@ -250,7 +250,7 @@ b{ font-weight:700; }
 /* ═══════════════ TICKER ═══════════════ */
 .ticker{
   position:relative; background:#000; color:rgba(255,255,255,.62);
-  border-bottom:2px solid var(--red); overflow:hidden;
+  border-bottom:2px solid var(--red); overflow:hidden; overflow:clip; contain:paint;
   padding:16px 0; font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; font-weight:500;
 }
 .ticker__track{ display:flex; width:max-content; will-change:transform; }

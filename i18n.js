@@ -124,7 +124,7 @@ es: {
     { g: "Para Sponsors / Instituciones", items: [
       ["¿Qué tipo de apoyo buscan?", "Respaldo formal, apertura de redes, difusión y co-branding. El retorno es directo: asociación con una misión de alto perfil en China, visibilidad internacional y posicionamiento en el eje de vinculación comercial tecnológica."],
       ["¿Qué obtiene mi institución al sumarse?", "Asociación directa con una misión que tiene agenda en las ferias y empresas más relevantes de China, visibilidad ante el ecosistema emprendedor de ambos países, y participación en la construcción de un canal entre ambos países."],
-      ["¿Qilin Forge es un evento único o tiene continuidad?", "Tiene visión de continuidad. Uno de sus objetivos centrales es establecer un canal permanente entre ambos países post-misión, con seguimiento de acuerdos y soft-landing para las startups que avanzan. Esta primera edición es el punto de partida."],
+      ["¿Qilin Forge sucede una vez?", "No, tiene visión de continuidad. Uno de sus objetivos centrales es establecer un canal permanente entre ambos países. Esta primera edición es el punto de partida."],
       ["¿Por qué patrocinar Qilin Forge?", "Porque es una oportunidad de asociar tu marca a una misión que posiciona a Argentina como origen de innovación ante el mercado más grande del mundo. Los sponsors obtienen visibilidad ante una audiencia curada de founders, inversores e instituciones de ambos países, en un contexto de alto impacto y baja saturación. Los tiers de sponsorship y sus beneficios se comunicarán próximamente."]
     ]}
   ]
@@ -248,7 +248,7 @@ en: {
     { g: "For Sponsors / Institutions", items: [
       ["What kind of support are you looking for?", "Formal backing, network access, promotion, and co-branding. The return is direct: association with a high-profile mission in China, international visibility, and positioning at the center of tech commercial ties."],
       ["What does my institution get by joining?", "Direct association with a mission that has an agenda at China's most relevant fairs and companies, visibility before both countries' entrepreneurial ecosystems, and participation in building a channel between both countries."],
-      ["Is Qilin Forge a one-time event or does it have continuity?", "It has a vision of continuity. One of its core goals is establishing a permanent channel between both countries post-mission, with agreement follow-up and soft-landing for advancing startups. This first edition is the starting point."],
+      ["Does Qilin Forge happen only once?", "No, it has a vision of continuity. One of its central objectives is to establish a permanent channel between both countries. This first edition is the starting point."],
       ["Why sponsor Qilin Forge?", "Because it's an opportunity to associate your brand with a mission that positions Argentina as a source of innovation before the world's largest market. Sponsors get visibility before a curated audience of founders, investors, and institutions from both countries, in a high-impact, low-saturation context. Sponsorship tiers and benefits will be announced soon."]
     ]}
   ]
@@ -372,7 +372,7 @@ zh: {
     { g: "赞助商 / 机构合作", items: [
       ["你们寻求什么样的支持？", "正式背书、网络开放、宣传推广与联合品牌。回报是直接的：与一项在中国具有高知名度的使命建立联系、获得国际曝光度，并在科技商贸领域获得定位。"],
       ["我的机构加入后能获得什么？", "与一项在中国最具影响力的展会和企业中拥有议程的使命直接建立联系，在两国创业生态系统面前获得曝光，并参与构建两国之间的渠道。"],
-      ["Qilin Forge是一次性活动，还是具有持续性？", "它具有持续发展的愿景。其核心目标之一是在使命结束后建立永久性的两国渠道，持续跟进协议并为不断推进的初创企业提供软着陆支持。首届使命只是起点。"],
+      ["麒麟锻造只举办一次吗？", "不，它具有延续性的愿景。其核心目标之一，是在两国之间建立一条长期的渠道。第一届只是起点。"],
       ["为什么要赞助Qilin Forge？", "因为这是一个将贵品牌与一项使命相关联的机会，该使命将阿根廷定位为面向全球最大市场的创新源头。赞助商将在高影响力、低饱和度的背景下，获得两国创始人、投资者和机构组成的精选受众的曝光。赞助层级及权益将于近期公布。"]
     ]}
   ]

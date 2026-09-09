@@ -709,7 +709,13 @@ b{ font-weight:700; }
   .crit{ grid-template-columns:1fr; }
   .stats{ grid-template-columns:repeat(2,1fr); }
   .orgs__grid,.tracks{ grid-template-columns:1fr; }
-  .track h3,.track p,.track .btn,.track small{ margin-left:0; padding-left:0; }
+  /* La sangria de 34px la dan h3 y p con padding, y el boton y la fecha con
+     margin. Poniendo padding-left:0 a los cuatro se le comia al boton su
+     propio padding y el texto quedaba pegado al borde izquierdo. */
+  .track h3,.track p{ padding-left:0; }
+  .track .btn,.track small{ margin-left:0; }
+  /* En una sola columna el boton estirado se lee larguisimo: que abrace al texto. */
+  .track .btn{ justify-self:start; }
   .track + .track::before{ display:none; }
   .track + .track{ padding-top:30px; border-top:1px solid rgba(175,253,251,.16); }
   .card__plane{ display:none; }
@@ -734,8 +740,9 @@ b{ font-weight:700; }
   .qa__a p{ padding-right:0; }
   .foot__route{ font-size:12px; }
   .mision__grid{ gap:36px; }
-  .track p,.track .btn,.track small{ margin-left:0; padding-left:0; }
-  .track small{ left:0; }
+  .track p{ padding-left:0; }
+  .track .btn,.track small{ margin-left:0; }
+  .track .btn{ justify-self:start; }
 }
 @media (max-width:700px){
   /* the header keeps only identity + menu; CTA and languages live in the menu */

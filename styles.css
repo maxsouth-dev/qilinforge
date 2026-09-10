@@ -199,7 +199,7 @@ b{ font-weight:700; }
 /* ═══════════════ HERO ═══════════════ */
 .hero{
   position:relative; min-height:100svh; display:flex; align-items:center;
-  padding:calc(var(--nav-h) + 4vh) 0 8vh; overflow:hidden; overflow:clip; isolation:isolate;
+  padding:calc(var(--nav-h) + 4vh) 0 8vh; overflow:hidden; isolation:isolate;
   background:
     radial-gradient(105% 80% at 60% 52%, #0C1615 0%, #04090A 46%, #000 76%),
     #000;
@@ -250,10 +250,10 @@ b{ font-weight:700; }
 /* ═══════════════ TICKER ═══════════════ */
 .ticker{
   position:relative; background:#000; color:rgba(255,255,255,.62);
-  border-bottom:2px solid var(--red); overflow:hidden; overflow:clip; contain:paint;
+  border-bottom:2px solid var(--red); overflow:hidden;
   padding:16px 0; font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; font-weight:500;
 }
-.ticker__track{ display:flex; width:max-content; will-change:transform; }
+.ticker__track{ display:flex; width:max-content; }
 .ticker__set{ display:flex; align-items:center; gap:34px; padding-right:34px; white-space:nowrap; }
 .ticker__set b{ color:var(--mint); font-size:9px; transition:transform .6s var(--e-out); display:inline-block; }
 .ticker:hover .ticker__set b{ transform:rotate(180deg) scale(1.35); }

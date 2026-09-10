@@ -399,7 +399,10 @@ function frame() {
     speed = lerp(speed, baseSpeed + Math.min(vel * .09, 3.4), .08);
     tickerX -= speed;
     if (tickerX <= -setWidth) tickerX += setWidth;
-    tickerTrack.style.transform = `translate3d(${tickerX}px,0,0)`;
+    /* translateX y no translate3d: el 3d promueve la cinta a capa de GPU y
+       iOS Safari deja de clipearla contra el overflow del padre, con lo que
+       la pagina se podia desplazar hacia el costado. */
+    tickerTrack.style.transform = `translateX(${tickerX}px)`;
   }
 
   if (!RM) {

@@ -38,9 +38,9 @@ body{
   margin:0; background:#000; color:var(--ink);
   font-family:var(--sans); font-size:16px; line-height:1.62;
   font-weight:400; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-  overflow-x:hidden; overflow-x:clip;
+  overflow-x:hidden;
 }
-html{ scroll-behavior:smooth; scroll-padding-top:var(--nav-h); overflow-x:hidden; overflow-x:clip; }
+html{ scroll-behavior:smooth; scroll-padding-top:var(--nav-h); }
 img{ max-width:100%; display:block; }
 a{ color:inherit; text-decoration:none; }
 ul,ol{ margin:0; padding:0; list-style:none; }
@@ -425,7 +425,12 @@ b{ font-weight:700; }
   background:url(assets/paper.jpg) 0 0 / 420px 420px repeat, #EFEDEA;
   background-blend-mode:multiply;
 }
-.mision{ padding:clamp(60px,7.5vw,144px) 0 clamp(50px,5.6vw,108px); }
+/* El sello es circular dentro de un PNG cuadrado y app.js lo rota hasta 26deg
+   segun el scroll. Rotado, su caja pasa de 350 a 421px y se sale 15px de la
+   pantalla por cada lado. Se recorta con clip, que no crea contenedor de
+   scroll y por eso no afecta a los position:fixed. Lo que se corta son las
+   esquinas transparentes del PNG, no el dibujo. */
+.mision{ padding:clamp(60px,7.5vw,144px) 0 clamp(50px,5.6vw,108px); overflow-x:clip; }
 .mision__grid{ position:relative; display:grid; grid-template-columns:1fr 1.22fr; gap:clamp(30px,4.6vw,88px); align-items:start; }
 .mision__seal{ position:relative; padding-top:2vw; }
 .seal{ width:min(100%,660px); transform-origin:50% 50%; cursor:pointer;

@@ -54,6 +54,16 @@ es: {
   "ventana.e3": "3.000+ expositores · 500K+ visitantes",
   "ventana.claim": "Combinar el talento innovador argentino con la escala, la capacidad de manufactura y el capital del mercado chino.",
 
+  "apply.title": "¿Quiénes deberían aplicar?",
+  "apply.k1": "Founders que quieran construir relaciones comerciales en un mercado hipercompetitivo como China.",
+  "apply.v1": "Veintitrés días en Shanghai y Shenzhen, con reuniones institucionales y B2B en las dos ciudades.",
+  "apply.k2": "Startups que estén explorando la posibilidad de un próximo cliente o socio en China.",
+  "apply.v2": "Del 11 al 19 de noviembre la agenda es enteramente B2B y side events.",
+  "apply.k3": "Founders que pretendan participar en 3 ferias internacionales con acceso a stands, roadshow y stages para startups.",
+  "apply.v3": "CIIE, Hongqiao Tech Week y China Hi-Tech Fair.",
+  "apply.k4": "Startups que crean que una agenda curada en específico les aporta más valor.",
+  "apply.v4": "La agenda se termina de definir antes de viajar en función de la delegación seleccionada.",
+
   "mision.title": "23 días. 3 eventos. <b>Una misión.</b>",
   "mision.p": "En noviembre de 2026, cruzaremos el mapa con empresarios innovadores que trabajan con pasión para dar soluciones potentes a problemas significativos. Una delegación curada de startups y empresas tecnológicas argentinas viaja a China, combinando formación cultural, exposición en ferias internacionales y reuniones directas con los actores que están definiendo el futuro de la tecnología global.",
   "mision.c1": "Reuniones de negocio y networking estratégico",
@@ -70,8 +80,11 @@ es: {
   "deleg.k4": "Adaptación cultural",
   "deleg.v4": "Dominio fluido del inglés y capacidad de adaptación a dinámicas de negociación asiáticas.",
   "deleg.st1": "Registro en plataforma",
-  "deleg.st2": "Entrevistas técnicas",
-  "deleg.st3": "Selección final",
+  "deleg.st2": "Preselección",
+  "deleg.st3": "Solicitud de información, cuando se requiera",
+  "deleg.st4": "Entrevistas técnicas",
+  "deleg.st5": "Selección final",
+  "deleg.st6": "Comunicación de resultados",
   "deleg.note": "Mínimo 5 startups seleccionadas",
 
   "orgs.title": "Quiénes <b>impulsan</b> esto",
@@ -116,7 +129,7 @@ es: {
     { g: "Para startups y empresas", items: [
       ["¿Cómo puedo aplicar para ser parte de la delegación?", "La convocatoria abre el 9 de septiembre de 2026 y cierra el 9 de octubre de 2026. El registro se realiza a través de la plataforma de Rootgraph."],
       ["¿Cuáles son los criterios de selección?", "Cuatro: validación comercial (producto activo con tracción real), pertenencia a verticales clave (AI, Fintech, Agtech, Logistics, Hardware y Healthtech), sinergia estratégica comprobable con la infraestructura y los canales de distribución chinos, y adaptación cultural, incluyendo dominio fluido del inglés."],
-      ["¿Cuál es el proceso de selección?", "Registro en plataforma → entrevistas técnicas → selección final. Se seleccionará un mínimo de 5 startups."],
+      ["¿Cuál es el proceso de selección?", "Seis etapas: registro en plataforma, preselección, solicitud de información cuando se requiera, entrevistas técnicas, selección final y comunicación de resultados. Se seleccionará un mínimo de 5 startups."],
       ["¿Qué incluye la participación?", "La misión contempla distintos paquetes que pueden incluir vuelos domésticos dentro de China, alojamiento, traslados y agenda de eventos. La estructura final dependerá del nivel de financiamiento que la misión logre asegurar. Los detalles se comunicarán a los participantes seleccionados."],
       ["¿Necesito hablar chino?", "No. Se requiere dominio fluido del inglés y capacidad de adaptación a las dinámicas de negociación asiáticas."],
       ["¿Puedo participar si mi startup no es argentina?", "Qilin Forge nace como una iniciativa del ecosistema argentino. Si tu empresa opera desde otro país de Latinoamérica y tiene interés en participar, contactanos para evaluar tu caso."]
@@ -178,6 +191,16 @@ en: {
   "ventana.e3": "3,000+ exhibitors · 500K+ visitors",
   "ventana.claim": "Combine Argentine innovative talent with the scale, manufacturing capacity, and capital of the Chinese market.",
 
+  "apply.title": "Who should apply?",
+  "apply.k1": "Founders who want to build commercial relationships in a hypercompetitive market like China.",
+  "apply.v1": "Twenty-three days in Shanghai and Shenzhen, with institutional and B2B meetings in both cities.",
+  "apply.k2": "Startups exploring a possible next client or partner in China.",
+  "apply.v2": "From November 11 to 19 the agenda is entirely B2B and side events.",
+  "apply.k3": "Founders aiming to take part in 3 international fairs with access to stands, roadshow and startup stages.",
+  "apply.v3": "CIIE, Hongqiao Tech Week and the China Hi-Tech Fair.",
+  "apply.k4": "Startups that believe a specifically curated agenda adds more value.",
+  "apply.v4": "The agenda is finalized before the trip, around the delegation that is selected.",
+
   "mision.title": "23 days. 3 events. <b>One mission.</b>",
   "mision.p": "In November 2026, we're crossing the map with innovative entrepreneurs who work with passion to deliver powerful solutions to meaningful problems. A curated delegation of Argentine startups and tech companies travels to China, combining cultural formation, exposure at international trade fairs, and direct meetings with the players defining the future of global technology.",
   "mision.c1": "Business meetings and strategic networking",
@@ -194,8 +217,11 @@ en: {
   "deleg.k4": "Cultural readiness",
   "deleg.v4": "Fluent English and the ability to adapt to Asian negotiation dynamics.",
   "deleg.st1": "Platform registration",
-  "deleg.st2": "Technical interviews",
-  "deleg.st3": "Final selection",
+  "deleg.st2": "Shortlist",
+  "deleg.st3": "Information request, when needed",
+  "deleg.st4": "Technical interviews",
+  "deleg.st5": "Final selection",
+  "deleg.st6": "Results notification",
   "deleg.note": "Minimum 5 startups selected",
 
   "orgs.title": "Who <b>drives</b> this",
@@ -240,7 +266,7 @@ en: {
     { g: "For startups and companies", items: [
       ["How can I apply to join the delegation?", "Applications open September 9, 2026 and close October 9, 2026. Registration happens through the Rootgraph platform."],
       ["What are the selection criteria?", "Four: commercial validation (active product with real traction), belonging to key verticals (AI, Fintech, Agtech, Logistics, Hardware and Healthtech), provable strategic synergy with Chinese infrastructure and distribution channels, and cultural readiness, including fluent English."],
-      ["What's the selection process?", "Platform registration → technical interviews → final selection. A minimum of 5 startups will be selected."],
+      ["What's the selection process?", "Six stages: platform registration, shortlist, information request when needed, technical interviews, final selection and results notification. A minimum of 5 startups will be selected."],
       ["What does participation include?", "The mission includes different packages that may cover domestic flights within China, lodging, transfers, and the events agenda. The final structure will depend on the funding level the mission secures. Details will be communicated to selected participants."],
       ["Do I need to speak Chinese?", "No. Fluent English is required, along with the ability to adapt to Asian negotiation dynamics."],
       ["Can I participate if my startup isn't Argentine?", "Qilin Forge was born as an initiative of the Argentine ecosystem. If your company operates from another Latin American country and is interested in participating, reach out and we'll evaluate your case."]
@@ -302,6 +328,16 @@ zh: {
   "ventana.e3": "3000+展商·50万+访客",
   "ventana.claim": "将阿根廷的创新人才与中国市场的规模、制造能力和资本相结合。",
 
+  "apply.title": "谁应该申请？",
+  "apply.k1": "希望在中国这样竞争激烈的市场中建立商业关系的创始人。",
+  "apply.v1": "二十三天，走访上海与深圳，在两座城市都安排机构会谈与B2B洽谈。",
+  "apply.k2": "正在中国寻找下一个客户或合作伙伴的初创企业。",
+  "apply.v2": "11月11日至19日，议程全部为B2B洽谈与周边活动。",
+  "apply.k3": "希望参加3场国际展会，获得展位、路演和初创企业舞台机会的创始人。",
+  "apply.v3": "进博会、虹桥科技周与中国高新技术成果交易会。",
+  "apply.k4": "认为量身定制的议程能带来更多价值的初创企业。",
+  "apply.v4": "议程在出发前根据入选的代表团最终确定。",
+
   "mision.title": "23天。3场活动。<b>一个使命。</b>",
   "mision.p": "2026年11月，我们将与怀抱热情的创新企业家一同穿越地图，为重大问题提供有力的解决方案。一支经过精心遴选的阿根廷初创企业和科技公司代表团将前往中国，融合文化培训、国际展会曝光，以及与定义全球科技未来的关键参与者的直接会晤。",
   "mision.c1": "商务会议与战略交流",
@@ -318,8 +354,11 @@ zh: {
   "deleg.k4": "文化适应力",
   "deleg.v4": "流利的英语能力，以及适应亚洲商业谈判方式的能力。",
   "deleg.st1": "平台注册",
-  "deleg.st2": "技术面试",
-  "deleg.st3": "最终遴选",
+  "deleg.st2": "初步筛选",
+  "deleg.st3": "补充信息，如有需要",
+  "deleg.st4": "技术面试",
+  "deleg.st5": "最终遴选",
+  "deleg.st6": "结果通知",
   "deleg.note": "至少遴选5家初创企业",
 
   "orgs.title": "<b>推动</b>者",
@@ -364,7 +403,7 @@ zh: {
     { g: "初创企业与公司", items: [
       ["我如何申请加入代表团？", "申请通道于2026年9月9日开放，10月9日截止。注册通过Rootgraph平台进行。"],
       ["遴选标准是什么？", "共四项：商业验证（具有真实市场牵引力的活跃产品）、属于关键领域（人工智能、金融科技、农业科技、物流、硬件与健康科技）、与中国基础设施及分销渠道之间可验证的战略协同，以及文化适应力，包括流利的英语。"],
-      ["遴选流程是怎样的？", "平台注册 → 技术面试 → 最终遴选。至少将遴选5家初创企业。"],
+      ["遴选流程是怎样的？", "共六个阶段：平台注册、初步筛选、补充信息（如有需要）、技术面试、最终遴选、结果通知。至少将遴选5家初创企业。"],
       ["参与内容包括什么？", "使命包含不同的套餐，可能涵盖中国境内的国内航班、住宿、接送以及活动议程。最终结构将取决于使命所获得的资金水平，详情将及时告知入选参与者。"],
       ["我需要会说中文吗？", "不需要。需要流利的英语，以及适应亚洲商业谈判节奏的能力。"],
       ["如果我的初创企业不是阿根廷企业，可以参与吗？", "Qilin Forge诞生于阿根廷生态系统的倡议。如果贵公司在拉丁美洲其他国家运营并有意参与，请联系我们评估你的情况。"]

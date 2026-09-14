@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Hedvig+Letters+Serif&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=53">
+<link rel="stylesheet" href="styles.css?v=58">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='none' stroke='%23C3001D' stroke-width='8'/><circle cx='50' cy='50' r='16' fill='%23C3001D'/></svg>">
 </head>
 <body>
@@ -318,12 +318,12 @@
       <article class="track">
         <h3 data-i18n="parte.t2">Instituciones</h3>
         <p data-i18n="parte.d2">Si sos una institución que entiende que la competitividad tecnológica de Argentina se define por su capacidad de conectar con los mercados, tu respaldo potencia esta misión.</p>
-        <a class="btn btn--outline-mint magnetic" href="#" data-i18n="parte.b2">Sumar tu institución</a>
+        <button class="btn btn--outline-mint magnetic" type="button" data-form="institucion" data-i18n="parte.b2">Sumar tu institución</button>
       </article>
       <article class="track">
         <h3 data-i18n="parte.t3">Sponsors</h3>
         <p data-i18n="parte.d3">Si sos una empresa o marca que quiere asociarse a una iniciativa de alto impacto con visibilidad internacional real, hay lugar en la mesa.</p>
-        <a class="btn btn--outline-mint magnetic" href="#" data-i18n="parte.b3">Explorar sponsorship</a>
+        <button class="btn btn--outline-mint magnetic" type="button" data-form="sponsor" data-i18n="parte.b3">Explorar sponsorship</button>
       </article>
     </div>
   </div>
@@ -353,19 +353,103 @@
       <img class="org__logo" src="assets/org-rootgraph.png" alt="Rootgraph">
       <img class="org__logo org__logo--hf" src="assets/org-humanfriendly.svg" alt="Human Friendly">
     </p>
-    <p class="foot__route"><span data-i18n="foot.from">Buenos Aires, Argentina</span> <svg viewBox="0 0 24 24" class="ico-arrow"><path d="M4 12h15M13 6l6 6-6 6"/></svg> <span data-i18n="foot.to">Shanghai · Shenzhen, China</span></p>
-    <ul class="foot__social">
-      <li><a href="mailto:hola@qilinforge.com" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a></li>
-    </ul>
+    <p class="foot__route"><span data-i18n="foot.from">Buenos Aires, Argentina</span> <svg viewBox="0 0 24 24" class="ico-arrow"><path d="M4 12h15M13 6l6 6-6 6"/></svg> <span data-i18n="foot.to">Shanghai y Shenzhen, China</span></p>
     <p class="foot__legal">© 2026 Qilin Forge. <span data-i18n="foot.rights">Todos los derechos reservados.</span></p>
   </div>
 </footer>
+
+<!-- ══════════ MODAL DE FORMULARIOS (Instituciones / Sponsors) ══════════
+     Un solo dialog sirve a las dos variantes. Lo que cambia entre ellas son
+     cuatro textos (eyebrow, titulo, bajada y el label del campo de mensaje) y
+     el campo "Tipo de institucion", que solo aparece en la variante institucion.
+     El JS asigna el data-i18n de esos textos segun la variante, asi el cambio
+     de idioma con el modal abierto los repinta como a cualquier otro nodo. -->
+<dialog class="fmodal" id="fmodal" aria-labelledby="fmodalTitle">
+  <div class="fmodal__box">
+    <button type="button" class="fmodal__x" id="fmodalClose">
+      <span class="sr-only" data-i18n="form.close">Cerrar</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+
+    <p class="eyebrow eyebrow--mint" id="fmodalEyebrow"></p>
+    <h2 class="fmodal__title serif" id="fmodalTitle"></h2>
+    <p class="fmodal__sub" id="fmodalSub"></p>
+
+    <form class="fmodal__form" id="fmodalForm">
+      <input type="hidden" name="formulario" id="fmodalKind">
+      <input type="hidden" name="lang" id="fmodalLang">
+      <!-- Honeypot: invisible para una persona, tentador para un bot. Si llega
+           con algo, el worker descarta el envio sin avisar. -->
+      <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="fgrid">
+        <label class="f f--org">
+          <span class="f__lab" id="fmodalOrg"></span>
+          <input type="text" name="organizacion" autofocus required>
+        </label>
+
+        <label class="f" id="fmodalType">
+          <span class="f__lab" data-i18n="form.type">Tipo de institución</span>
+          <select name="tipo" required>
+            <option value="" data-i18n="form.type0">Elegir una opción</option>
+            <option value="camara" data-i18n="form.type1">Cámara empresarial</option>
+            <option value="universidad" data-i18n="form.type2">Universidad o centro de investigación</option>
+            <option value="organismo" data-i18n="form.type3">Organismo público</option>
+            <option value="asociacion" data-i18n="form.type4">Asociación o cluster</option>
+            <option value="otra" data-i18n="form.type5">Otra</option>
+          </select>
+        </label>
+
+        <label class="f">
+          <span class="f__lab" data-i18n="form.name">Nombre y apellido</span>
+          <input type="text" name="nombre" required>
+        </label>
+
+        <label class="f">
+          <span class="f__lab" data-i18n="form.role">Cargo</span>
+          <input type="text" name="cargo" required>
+        </label>
+
+        <label class="f">
+          <span class="f__lab" data-i18n="form.email">Email</span>
+          <input type="email" name="email" required>
+        </label>
+
+        <label class="f">
+          <span class="f__lab"><span data-i18n="form.phone">Teléfono o WhatsApp</span> <em data-i18n="form.optional">opcional</em></span>
+          <input type="tel" name="telefono">
+        </label>
+
+        <label class="f f--wide">
+          <span class="f__lab"><span data-i18n="form.web">Sitio web</span> <em data-i18n="form.optional">opcional</em></span>
+          <input type="text" name="web">
+        </label>
+
+        <label class="f f--wide">
+          <span class="f__lab" id="fmodalMsg"></span>
+          <textarea name="mensaje" rows="4" required></textarea>
+        </label>
+      </div>
+
+      <!-- data-sitekey es publica por diseno, identifica al widget y no da acceso
+           a nada. La clave privada vive como secreto del worker. -->
+      <div class="cf-turnstile fmodal__cf" data-sitekey="0x4AAAAAAEz-QwmalgUp54xB" data-theme="dark"></div>
+
+      <div class="fmodal__foot">
+        <button type="submit" class="btn btn--outline-mint" id="fmodalSend" data-i18n="form.send">Enviar</button>
+        <p class="fmodal__note" id="fmodalNote" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</dialog>
 
 <!-- easter egg runner -->
 <div class="runner" id="runner" aria-hidden="true"><img src="assets/art-qilin.png" alt=""></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="i18n.js?v=47"></script>
-<script src="app.js?v=42"></script>
+<!-- Turnstile, el captcha de Cloudflare. Render automatico sobre .cf-turnstile. -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script src="i18n.js?v=50"></script>
+<script src="app.js?v=45"></script>
 </body>
 </html>

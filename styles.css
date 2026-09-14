@@ -799,6 +799,80 @@ b{ font-weight:700; }
   .hero__cta{ gap:6px; }
 }
 
+/* ═══════════════ MODAL DE FORMULARIOS ═══════════════
+   Un solo dialog para Instituciones y Sponsors. Fondo negro como .parte, con
+   el hilo mint de borde que usan las tarjetas de .track. */
+.sr-only{ position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+
+.fmodal{
+  width:min(100% - 32px, 520px); max-height:min(92vh,940px); overflow:auto;
+  padding:0; border:0; background:none; color:#fff;
+}
+.fmodal::backdrop{ background:rgba(0,0,0,.74); }
+.fmodal[open]{ animation:fmodalIn .55s var(--e-out); }
+.fmodal[open]::backdrop{ animation:fmodalFade .45s ease; }
+@keyframes fmodalIn{ from{ opacity:0; transform:translateY(20px) } to{ opacity:1; transform:none } }
+@keyframes fmodalFade{ from{ opacity:0 } to{ opacity:1 } }
+
+.fmodal__box{
+  position:relative; background:#010303; padding:clamp(22px,2.4vw,32px);
+  box-shadow:inset 0 0 0 1px rgba(175,253,251,.2);
+}
+.fmodal__x{
+  position:absolute; top:12px; right:12px; width:42px; height:42px;
+  display:grid; place-items:center; color:rgba(255,255,255,.55); transition:color .3s var(--e-out);
+}
+.fmodal__x:hover{ color:var(--mint); }
+.fmodal__x svg{ width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; }
+
+.fmodal__title{ margin-top:10px; font-size:clamp(22px,2vw,29px); line-height:1.18; letter-spacing:-.02em; }
+.fmodal__sub{ margin-top:10px; max-width:54ch; font-size:clamp(12.5px,.85vw,13.5px); color:rgba(255,255,255,.62); }
+
+/* ── Campos ── */
+.fgrid{ margin-top:clamp(14px,1.6vw,20px); display:grid; grid-template-columns:1fr 1fr; gap:clamp(10px,1vw,13px); }
+.f{ display:grid; gap:6px; }
+.f[hidden]{ display:none; }   /* display:grid pisa el none implicito de [hidden] */
+.f--wide{ grid-column:1 / -1; }
+/* Organizacion comparte fila con Tipo de institucion. En la variante de
+   sponsors ese campo no existe, asi que se queda con la fila entera. */
+.fmodal:not(.has-type) .f--org{ grid-column:1 / -1; }
+.f__lab{ font-size:10.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.6); }
+.f__lab em{ font-style:normal; font-weight:400; letter-spacing:.02em; text-transform:none; color:rgba(255,255,255,.32); }
+.f input,.f select,.f textarea{
+  width:100%; padding:9px 12px; font:inherit; font-size:14px; color:#fff;
+  background:rgba(255,255,255,.04); border:0; box-shadow:inset 0 0 0 1px rgba(255,255,255,.15);
+  transition:box-shadow .3s var(--e-out), background .3s var(--e-out);
+}
+.f input:focus,.f select:focus,.f textarea:focus{
+  outline:0; background:rgba(175,253,251,.06); box-shadow:inset 0 0 0 1px var(--mint);
+}
+.f textarea{ min-height:66px; line-height:1.5; resize:vertical; }
+/* La flecha del select se dibuja como fondo porque appearance:none la borra. */
+.f select{
+  appearance:none; cursor:pointer; padding-right:42px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23AFFDFB' stroke-width='1.8'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 14px center; background-size:16px 16px;
+}
+.f select option{ background:#010303; color:#fff; }
+
+/* El honeypot sale del flujo sin display:none, que algunos bots detectan. */
+.hp{ position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none; }
+.fmodal__cf{ margin-top:clamp(12px,1.3vw,16px); }
+
+/* ── Pie y estados ── */
+.fmodal__foot{ margin-top:clamp(14px,1.6vw,20px); display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+.fmodal__note{ font-size:13.5px; color:rgba(255,255,255,.6); }
+.fmodal__note.is-ok{ color:var(--mint); }
+.fmodal__note.is-err{ color:#FF9A9A; }
+/* Enviado: quedan solo el encabezado y el mensaje de confirmacion. */
+.fmodal.is-sent .fgrid,.fmodal.is-sent .fmodal__foot .btn{ display:none; }
+.fmodal .btn:disabled{ opacity:.45; pointer-events:none; }
+
+@media (max-width:640px){
+  .fgrid{ grid-template-columns:1fr; }
+  .fmodal__box{ padding:34px 22px 28px; }
+}
+
 /* ═══════════════ MOTION PREFERENCES ═══════════════ */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }

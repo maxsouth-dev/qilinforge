@@ -457,7 +457,92 @@ function frame() {
   requestAnimationFrame(frame);
 }
 
-/* ───────────────────────── 12. Boot ───────────────────────── */
+/* ───────────────────────── 12. Modal de formularios ─────────────────────────
+   Un mismo dialog atiende a Instituciones y Sponsors. Entre las dos variantes
+   cambian cuatro textos y el campo "Tipo de institucion".
+   El POST va al worker de Cloudflare, que corre sobre el mismo dominio gracias al
+   proxy en naranja. Por eso la ruta es relativa y no hay CORS de por medio.
+   Para probar contra `wrangler dev`, apuntarla a 'http://127.0.0.1:8787'. */
+const FORM_ENDPOINT = '/api/contacto';
+
+const FORM_VARIANTS = {
+  institucion: { eyebrow:'form.i.eyebrow', title:'form.i.title', sub:'form.i.sub', org:'form.i.org', msg:'form.i.msg', type:true  },
+  sponsor:     { eyebrow:'form.s.eyebrow', title:'form.s.title', sub:'form.s.sub', org:'form.s.org', msg:'form.s.msg', type:false }
+};
+
+const fmodal = $('#fmodal');
+if (fmodal) {
+  const fform   = $('#fmodalForm');
+  const ftype   = $('#fmodalType');
+  const fselect = $('select[name="tipo"]', ftype);
+  const fnote   = $('#fmodalNote');
+  const fsend   = $('#fmodalSend');
+  const fkind   = $('#fmodalKind');
+
+  /* Los textos que cambian por variante se marcan con su clave, no con el texto
+     ya resuelto: asi applyLang los repinta como a cualquier otro nodo del sitio. */
+  const setKey = (el, key) => { el.dataset.i18n = key; el.textContent = t(key); };
+
+  function openForm(kind) {
+    const v = FORM_VARIANTS[kind];
+    if (!v) return;
+    setKey($('#fmodalEyebrow'), v.eyebrow);
+    setKey($('#fmodalTitle'),   v.title);
+    setKey($('#fmodalSub'),     v.sub);
+    setKey($('#fmodalOrg'),     v.org);
+    setKey($('#fmodalMsg'),     v.msg);
+
+    ftype.hidden = !v.type;
+    fselect.disabled = !v.type;   // oculto y required frenaria el envio del otro formulario
+    fmodal.classList.toggle('has-type', !!v.type);
+
+    /* reset() limpia tambien los ocultos, asi que los dos se cargan despues. */
+    fform.reset();
+    fkind.value = kind;
+    $('#fmodalLang').value = lang;   // el acuse de recibo sale en este idioma
+    fmodal.classList.remove('is-sent');
+    fnote.textContent = '';
+    fnote.className = 'fmodal__note';
+    fsend.disabled = false;
+
+    fmodal.showModal();
+    document.body.classList.add('lock');
+  }
+
+  $$('[data-form]').forEach(b => b.addEventListener('click', () => openForm(b.dataset.form)));
+  $('#fmodalClose').addEventListener('click', () => fmodal.close());
+  /* Click afuera de la caja: el area del backdrop pertenece al dialog mismo. */
+  fmodal.addEventListener('click', e => { if (e.target === fmodal) fmodal.close(); });
+  fmodal.addEventListener('close', () => document.body.classList.remove('lock'));
+
+  fform.addEventListener('submit', async e => {
+    e.preventDefault();
+    fsend.disabled = true;
+    fnote.className = 'fmodal__note';
+    fnote.textContent = t('form.sending');
+    try {
+      const r = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: new FormData(fform),
+        headers: { Accept: 'application/json' }
+      });
+      const data = await r.json().catch(() => ({}));
+      if (!r.ok || !data.success) throw new Error(data.error || r.status);
+      fmodal.classList.add('is-sent');
+      fnote.className = 'fmodal__note is-ok';
+      fnote.textContent = t('form.ok');
+    } catch (err) {
+      /* El captcha caducado es el unico error que el visitante puede resolver
+         solo, asi que se le dice que reintente en vez de mandarlo al mail. */
+      fsend.disabled = false;
+      fnote.className = 'fmodal__note is-err';
+      fnote.textContent = String(err.message) === 'captcha' ? t('form.captcha') : t('form.err');
+      if (window.turnstile) turnstile.reset();
+    }
+  });
+}
+
+/* ───────────────────────── 13. Boot ───────────────────────── */
 function boot() {
   applyLang(lang, false);
   $$('[data-split]').forEach(splitText);

@@ -13,11 +13,12 @@ const lerp  = (a, b, t) => a + (b - a) * t;
 
 /* ───────────────────────── 1. i18n ───────────────────────── */
 const LANGS = ['es', 'en', 'zh'];
-let lang = (() => {
-  try { const s = localStorage.getItem('qf-lang'); if (LANGS.includes(s)) return s; } catch (e) {}
-  const n = (navigator.language || 'es').slice(0, 2).toLowerCase();
-  return n === 'zh' ? 'zh' : n === 'en' ? 'en' : 'es';
+/* El sitio abre en español. Manda la eleccion manual guardada; si no la hay, solo una
+   IP de China lo pasa a chino, ver detectCountry() en el boot. */
+const savedLang = (() => {
+  try { const s = localStorage.getItem('qf-lang'); return LANGS.includes(s) ? s : null; } catch (e) { return null; }
 })();
+let lang = savedLang || 'es';
 
 function t(key) { return (I18N[lang] && I18N[lang][key]) ?? I18N.es[key] ?? ''; }
 
@@ -54,7 +55,6 @@ function renderFAQ() {
 
 function applyLang(next, animate = true) {
   lang = next;
-  try { localStorage.setItem('qf-lang', next); } catch (e) {}
   const dict = I18N[lang];
   document.documentElement.lang = dict['html.lang'];
   document.documentElement.dataset.lang = lang;
@@ -84,8 +84,17 @@ function applyLang(next, animate = true) {
 }
 
 $$('.lang button').forEach(b => b.addEventListener('click', () => {
+  try { localStorage.setItem('qf-lang', b.dataset.setlang); } catch (e) {}   // solo se guarda lo elegido a mano
   if (b.dataset.setlang !== lang) applyLang(b.dataset.setlang);
 }));
+
+/* Cloudflare expone el pais de la IP en /cdn-cgi/trace, sobre el mismo dominio (linea loc=).
+   En local esa ruta no existe y el sitio queda en español. */
+function detectCountry() {
+  fetch('/cdn-cgi/trace').then(r => r.text()).then(txt => {
+    if (/^loc=CN$/m.test(txt) && lang === 'es') applyLang('zh', false);   // si ya eligio a mano, no se pisa
+  }).catch(() => {});
+}
 
 /* ───────────────────────── 2. Split text ───────────────────────── */
 function splitText(el) {
@@ -545,6 +554,7 @@ if (fmodal) {
 /* ───────────────────────── 13. Boot ───────────────────────── */
 function boot() {
   applyLang(lang, false);
+  if (!savedLang) detectCountry();
   $$('[data-split]').forEach(splitText);
   observeReveals();
   $$('.stat__num').forEach(el => counterIO.observe(el));

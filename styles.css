@@ -425,7 +425,7 @@ b{ font-weight:700; }
    el multiply oscurece, asi se llega al mismo tono final. */
 .paper{
   position:relative;
-  background:url(assets/paper.jpg) 0 0 / 420px 420px repeat, #EFEDEA;
+  background:url(assets/paper.jpg?v=13) 0 0 / 420px 420px repeat, #EFEDEA;
   background-blend-mode:multiply;
 }
 /* El sello es circular dentro de un PNG cuadrado y app.js lo rota hasta 26deg
@@ -516,7 +516,7 @@ b{ font-weight:700; }
    la textura entra con soft-light. */
 .apply{ position:relative; color:#fff;
   padding:clamp(56px,6.6vw,126px) 0 clamp(64px,7.6vw,146px);
-  background:url(assets/paper.jpg) 0 0 / 840px 840px repeat,
+  background:url(assets/paper.jpg?v=13) 0 0 / 840px 840px repeat,
              radial-gradient(110% 90% at 18% 0%, #16201F 0%, #0A1211 46%, #000 90%);
   background-blend-mode:soft-light; }
 .apply .wrap{ padding-left:clamp(0px,7.6vw,146px); }
@@ -555,7 +555,7 @@ b{ font-weight:700; }
 .wave{
   position:absolute; inset:0; z-index:1; display:block;
   background:#649BDA; mix-blend-mode:multiply;
-  -webkit-mask-image:url(assets/wave-mask.png?v=16); mask-image:url(assets/wave-mask.png?v=16);
+  -webkit-mask-image:url(assets/wave-mask.webp); mask-image:url(assets/wave-mask.webp);
   -webkit-mask-size:1974px 100%; mask-size:1974px 100%;
   -webkit-mask-repeat:repeat-x;  mask-repeat:repeat-x;
   animation:waveDrift 40s linear infinite;
@@ -638,7 +638,7 @@ b{ font-weight:700; }
    arriba y abajo; la opacidad lo lleva al brillo del diseno original. */
 .skyline{
   position:absolute; inset:0; pointer-events:none;
-  background:url(assets/skyline.jpg) center 72%/cover no-repeat;
+  background:url(assets/skyline.webp) center 72%/cover no-repeat;
   opacity:.19;
   -webkit-mask-image:linear-gradient(180deg, transparent 0%, #000 18%, #000 76%, transparent 100%);
           mask-image:linear-gradient(180deg, transparent 0%, #000 18%, #000 76%, transparent 100%);

@@ -20,6 +20,19 @@ const savedLang = (() => {
 })();
 let lang = savedLang || 'es';
 
+/* Noto Sans SC y Noto Serif SC son 505 de los 521 bloques @font-face que devuelve Google
+   Fonts, 558 KB contra 8,9 KB sin ellas, y bloquean el render. Como el sitio abre en
+   español, se piden recien cuando alguien pasa a chino. */
+let cjkLoaded = false;
+function loadCJKFonts() {
+  if (cjkLoaded) return;
+  cjkLoaded = true;
+  const l = document.createElement('link');
+  l.rel  = 'stylesheet';
+  l.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500&display=swap';
+  document.head.appendChild(l);
+}
+
 function t(key) { return (I18N[lang] && I18N[lang][key]) ?? I18N.es[key] ?? ''; }
 
 function renderFAQ() {
@@ -54,6 +67,7 @@ function renderFAQ() {
 }
 
 function applyLang(next, animate = true) {
+  if (next === 'zh') loadCJKFonts();
   lang = next;
   const dict = I18N[lang];
   document.documentElement.lang = dict['html.lang'];
@@ -492,6 +506,18 @@ if (fmodal) {
      ya resuelto: asi applyLang los repinta como a cualquier otro nodo del sitio. */
   const setKey = (el, key) => { el.dataset.i18n = key; el.textContent = t(key); };
 
+  /* El captcha solo hace falta si alguien abre el formulario, asi que su script no
+     entra en la carga inicial. api.js se autorregistra sobre .cf-turnstile al llegar. */
+  let cfLoaded = false;
+  function loadTurnstile() {
+    if (cfLoaded) return;
+    cfLoaded = true;
+    const s = document.createElement('script');
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+    s.async = s.defer = true;
+    document.head.appendChild(s);
+  }
+
   function openForm(kind) {
     const v = FORM_VARIANTS[kind];
     if (!v) return;
@@ -514,6 +540,7 @@ if (fmodal) {
     fnote.className = 'fmodal__note';
     fsend.disabled = false;
 
+    loadTurnstile();
     fmodal.showModal();
     document.body.classList.add('lock');
   }

@@ -28,8 +28,8 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Hedvig+Letters+Serif&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=58">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Hedvig+Letters+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=59">
 <link rel="icon" href="/favicon.svg">
 </head>
 <body>
@@ -42,7 +42,7 @@
 <!-- ══════════ INTRO ══════════ -->
 <div class="intro" id="intro" aria-hidden="true">
   <div class="intro__inner">
-    <img class="intro__seal" src="assets/seal.png" alt="">
+    <img class="intro__seal" src="assets/seal.webp" alt="">
     <div class="intro__word"><span>麒</span><span>麟</span></div>
     <div class="intro__bar"><i></i></div>
   </div>
@@ -217,7 +217,7 @@
           <span class="flight__to" data-cn="深圳">Shenzhen</span>
         </em>
       </button>
-      <img class="card__sello" src="assets/seal.png" alt="" aria-hidden="true">
+      <img class="card__sello" src="assets/seal.webp" alt="" aria-hidden="true">
     </article>
   </div>
 </section>
@@ -239,7 +239,7 @@
 <section class="mision paper" data-nav="light">
   <div class="wrap mision__grid">
     <div class="mision__seal">
-      <img class="seal" src="assets/seal.png" alt="Sello Qilin Forge">
+      <img class="seal" src="assets/seal.webp" alt="Sello Qilin Forge">
       <img class="qiao" src="assets/qiaoliang.png" alt="桥梁 — puente">
       <span class="chop" aria-hidden="true">已<br>批<br>准</span>
     </div>
@@ -464,9 +464,10 @@
 <div class="runner" id="runner" aria-hidden="true"><img src="assets/art-qilin.png" alt=""></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<!-- Turnstile, el captcha de Cloudflare. Render automatico sobre .cf-turnstile. -->
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<!-- Turnstile, el captcha de Cloudflare. Su script no entra en la carga inicial:
+     lo inyecta loadTurnstile() al abrir el formulario, y api.js renderiza solo
+     sobre .cf-turnstile cuando llega. -->
 <script src="i18n.js?v=50"></script>
-<script src="app.js?v=46"></script>
+<script src="app.js?v=47"></script>
 </body>
 </html>

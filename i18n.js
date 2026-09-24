@@ -92,6 +92,7 @@ es: {
   "orgs.o1": "Comunidad con más de 5 años de trayectoria nativa en el ecosistema tech, construyendo infraestructura y comunidad desde adentro. Su recorrido incluye colaboraciones con Ethereum Foundation, Consensys, Aptos y Scroll, y la organización de la hackatón oficial de DevConnect Buenos Aires 2025.",
   "orgs.o2": "Startup argentina que se dedica a generar oportunidades entre desarrolladores de negocios. Su visión es construir un entorno profesional donde el trabajo humano de conectar adquiera mayor visibilidad y reconocimiento.",
   "orgs.o3": "Agencia creativa y tecnológica. Aporta la dirección estratégica, la comunicación y el diseño de experiencia de toda la misión.",
+  "partners.title": "Community partners",
 
   "puente.pre": "No estamos organizando un evento.",
   "puente.title": "Estamos construyendo un puente.",
@@ -260,6 +261,7 @@ en: {
   "orgs.o1": "A community with over 5 years of native track record in the tech ecosystem, building infrastructure and community from within. Its history includes collaborations with Ethereum Foundation, Consensys, Aptos, and Scroll, and organizing the official DevConnect Buenos Aires 2025 hackathon.",
   "orgs.o2": "An Argentine startup focused on generating opportunities between business developers. Its vision is to build a professional environment where the human work of connecting gains greater visibility and recognition.",
   "orgs.o3": "A creative and technology agency. Brings the strategic direction, communications, and experience design for the entire mission.",
+  "partners.title": "Community partners",
 
   "puente.pre": "We are not organizing an event.",
   "puente.title": "We're building a bridge.",
@@ -428,6 +430,7 @@ zh: {
   "orgs.o1": "在科技生态系统中拥有五年以上深耕经历的社群，从内部构建基础设施与社区。合作历史包括以太坊基金会、Consensys、Aptos和Scroll，以及组织2025年DevConnect布宜诺斯艾利斯官方黑客松。",
   "orgs.o2": "一家阿根廷初创企业，致力于在业务拓展者之间创造机会。其愿景是构建一个专业环境，让连接他人这项工作获得更多的可见度与认可。",
   "orgs.o3": "一家创意科技机构，负责整个使命的战略方向、传播与体验设计。",
+  "partners.title": "社区合作伙伴",
 
   "puente.pre": "我们并不是在办一场活动。",
   "puente.title": "我们在建造一座桥梁。",

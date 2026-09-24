@@ -590,6 +590,16 @@ b{ font-weight:700; }
 .org{ transition:transform .5s var(--e-out); }
 .org:hover{ transform:translateY(-6px); }
 
+/* ═══════════════ COMMUNITY PARTNERS ═══════════════ */
+.partners{ background:var(--ink); color:#fff; text-align:center; padding:clamp(56px,6vw,110px) 0; }
+.partners__list{ margin-top:clamp(28px,3vw,52px); display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:clamp(32px,4vw,72px); }
+.partners__logo{ display:block; height:clamp(110px,9vw,160px); width:auto; }
+/* en reposo el logo queda apenas apagado; al pasar el mouse se enciende y sube */
+@media (hover:hover){
+  .partners__logo{ opacity:.8; transition:opacity .5s var(--e-out), transform .5s var(--e-out); }
+  .partners__logo:hover{ opacity:1; transform:translateY(-6px); }
+}
+
 /* ═══════════════ RESPALDO ═══════════════ */
 .respaldo{ position:relative; background:var(--red); color:#fff; padding:clamp(56px,6.8vw,130px) 0 clamp(60px,8vw,154px); overflow:hidden; }
 .respaldo__pattern{

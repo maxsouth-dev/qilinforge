@@ -513,13 +513,15 @@ b{ font-weight:700; }
 /* Mismo grano que .paper y el mismo archivo, pero al doble de escala, 840px
    en vez de 420px, para que la particula se vea sobre el negro. Alli va con
    multiply sobre fondo claro; sobre negro multiply no pinta nada, asi que aca
-   la textura entra con soft-light. */
-.apply{ position:relative; color:#fff;
+   la textura entra con soft-light.
+   La textura va en un ::before con mix-blend-mode y no con background-blend-mode:
+   Safari de iOS ignora background-blend-mode en fondos que se repiten. */
+.apply{ position:relative; color:#fff; isolation:isolate;
   padding:clamp(56px,6.6vw,126px) 0 clamp(64px,7.6vw,146px);
-  background:url(assets/paper.jpg?v=13) 0 0 / 840px 840px repeat,
-             radial-gradient(110% 90% at 18% 0%, #16201F 0%, #0A1211 46%, #000 90%);
-  background-blend-mode:soft-light; }
-.apply .wrap{ padding-left:clamp(0px,7.6vw,146px); }
+  background:radial-gradient(110% 90% at 18% 0%, #16201F 0%, #0A1211 46%, #000 90%); }
+.apply::before{ content:''; position:absolute; inset:0; pointer-events:none;
+  background:url(assets/paper.jpg?v=13) 0 0 / 840px 840px repeat; mix-blend-mode:soft-light; }
+.apply .wrap{ position:relative; padding-left:clamp(0px,7.6vw,146px); }
 .apply__list{ margin-top:clamp(36px,4.2vw,80px); display:grid; grid-template-columns:1fr 1fr;
   gap:clamp(28px,3.3vw,62px) clamp(30px,5.4vw,104px); max-width:1250px; }
 .apply__list li{ position:relative; padding-left:22px; }
@@ -564,8 +566,10 @@ b{ font-weight:700; }
                       to  { -webkit-mask-position:-1974px 50%; mask-position:-1974px 50% } }
 
 /* ═══════════════ ORGANIZADORES ═══════════════ */
+/* paper-red.jpg es paper.jpg ya multiplicado por --red: Safari de iOS ignora
+   background-blend-mode en fondos que se repiten y mostraba el papel blanco. */
 .orgs{ position:relative; overflow:hidden; color:#fff;
-  background:url(assets/paper.jpg?v=13) 0 0 / 420px 420px repeat, var(--red); background-blend-mode:multiply;
+  background:url(assets/paper-red.jpg?v=1) 0 0 / 420px 420px repeat, var(--red);
   padding:clamp(56px,6.6vw,126px) 0 clamp(96px,12vw,240px); }
 /* la greca cierra la seccion: entra desde abajo y se apaga hacia el texto */
 .orgs__pattern{

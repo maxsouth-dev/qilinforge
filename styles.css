@@ -591,7 +591,9 @@ b{ font-weight:700; }
 .org:hover{ transform:translateY(-6px); }
 
 /* ═══════════════ COMMUNITY PARTNERS ═══════════════ */
-.partners{ background:var(--ink); color:#fff; text-align:center; padding:clamp(56px,6vw,110px) 0; }
+/* el degradado es el del puente reflejado: sobre el borde entre las dos secciones
+   los colores coinciden punto a punto y el corte desaparece */
+.partners{ background:radial-gradient(120% 100% at 50% 100%, #1C2828 0%, #0A1211 42%, var(--ink) 88%); color:#fff; text-align:center; padding:clamp(56px,6vw,110px) 0; }
 .partners__list{ margin-top:clamp(28px,3vw,52px); display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:clamp(32px,4vw,72px); }
 .partners__logo{ display:block; height:clamp(110px,9vw,160px); width:auto; }
 /* en reposo el logo queda apenas apagado; al pasar el mouse se enciende y sube */

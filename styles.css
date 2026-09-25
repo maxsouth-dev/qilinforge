@@ -543,11 +543,12 @@ b{ font-weight:700; }
   background:url(assets/paper.jpg?v=13) 0 0 / 420px 420px repeat, #EFEDEA;
   background-blend-mode:multiply;
 }
-/* la mitad de abajo es la roja, con la misma fibra de papel encima */
+/* la mitad de abajo es la roja, con la misma fibra de papel encima.
+   paper-red.jpg ya viene multiplicado: iOS ignora background-blend-mode al repetir */
 .waves::before{
   content:''; position:absolute; z-index:0; left:0; right:0; top:44.3%; bottom:0;
-  background:url(assets/paper.jpg?v=13) 0 0 / 420px 420px repeat, var(--red);
-  background-blend-mode:multiply; pointer-events:none;
+  background:url(assets/paper-red.jpg?v=1) 0 0 / 420px 420px repeat, var(--red);
+  pointer-events:none;
 }
 /* La ola esta dibujada a mano y no repite en ningun ancho, por eso mosaiquear
    el archivo original partia la hebra en cada empalme. El mask que usamos son

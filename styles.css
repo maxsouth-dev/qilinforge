@@ -602,11 +602,14 @@ b{ font-weight:700; }
 /* el degradado es el del puente reflejado: sobre el borde entre las dos secciones
    los colores coinciden punto a punto y el corte desaparece */
 .partners{ background:radial-gradient(120% 100% at 50% 100%, #1C2828 0%, #0A1211 42%, var(--ink) 88%); color:#fff; text-align:center; padding:clamp(16px,1.6vw,30px) 0 clamp(56px,6vw,110px); }
-.partners__list{ margin-top:clamp(28px,3vw,52px); display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:clamp(32px,4vw,72px); }
-.partners__logo{ display:block; height:clamp(110px,9vw,160px); width:auto; }
-/* El logo de Programa con Nosotros es macizo y mas ancho que alto, asi que a
-   la misma altura pesa mas que el resto. Se baja para emparejarlo. */
-.partners__logo--pcn{ height:clamp(80px,6.5vw,116px); }
+/* grid de cuatro columnas: dos filas de cuatro con los logos alineados en
+   columna. Cada columna mide lo que su logo mas ancho */
+.partners__list{ margin-top:clamp(28px,3vw,52px); display:grid; grid-template-columns:repeat(4,auto); justify-content:center; justify-items:center; align-items:center; gap:clamp(32px,4vw,72px); }
+.partners__list a{ display:block; }
+/* A la misma altura un logo ancho o macizo pesa mas que uno angosto o calado.
+   Cada logo lleva su factor --s en el HTML, calculado por proporcion y
+   cobertura de tinta, para que los ocho pesen lo mismo. */
+.partners__logo{ display:block; height:calc(clamp(110px,9vw,160px) * var(--s,1)); width:auto; }
 /* en reposo el logo queda apenas apagado; al pasar el mouse se enciende y sube */
 @media (hover:hover){
   .partners__logo{ opacity:.8; transition:opacity .5s var(--e-out), transform .5s var(--e-out); }
@@ -820,9 +823,8 @@ b{ font-weight:700; }
   .stats{ grid-template-columns:1fr; }
   .btn{ padding:15px 24px; }
   .hero__cta{ gap:6px; }
-  /* en celular los logos van en dos columnas fijas: con flex cada fila se
-     centraba por su cuenta y los logos no quedaban uno debajo del otro */
-  .partners__list{ display:grid; grid-template-columns:repeat(2,1fr); justify-items:center; }
+  /* en celular los logos van en dos columnas */
+  .partners__list{ grid-template-columns:repeat(2,1fr); }
 }
 
 /* ═══════════════ MODAL DE FORMULARIOS ═══════════════

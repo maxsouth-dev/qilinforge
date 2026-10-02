@@ -580,12 +580,11 @@ if (fmodal) {
 
 /* ───────────────────────── 12b. Contador de la convocatoria ─────────────────────────
    Cierra a las 00:00 del 10/10/2026 hora Argentina. Pasada esa hora la tarjeta
-   no aparece; si el visitante la cierra, no vuelve hasta la proxima visita. */
+   no aparece; si el visitante la cierra, vuelve a salir en la proxima carga. */
 const DEADLINE = new Date('2026-10-10T00:00:00-03:00').getTime();
 const deadline = $('#deadline');
 
 function startDeadline() {
-  try { if (sessionStorage.getItem('qf-dl') === '0') return; } catch (e) {}
   const cells = {};
   $$('[data-dl]', deadline).forEach(el => cells[el.dataset.dl] = el);
   const pad = n => String(n).padStart(2, '0');
@@ -609,7 +608,6 @@ function startDeadline() {
   $('#deadlineClose').addEventListener('click', () => {
     clearInterval(timer);
     deadline.remove();
-    try { sessionStorage.setItem('qf-dl', '0'); } catch (e) {}
   });
 }
 

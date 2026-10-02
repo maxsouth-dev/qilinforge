@@ -29,8 +29,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Hedvig+Letters+Serif&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=75">
+<link rel="stylesheet" href="styles.css?v=76">
 <link rel="icon" href="/favicon.svg">
+<!-- Microsoft Clarity: mapas de calor de clicks y scroll -->
+<script>
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "yri7gycxuu");
+</script>
 </head>
 <body>
 
@@ -481,10 +489,27 @@
 <div class="runner" id="runner" aria-hidden="true"><img src="assets/art-qilin.png" alt=""></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<!-- Contador al cierre de la convocatoria de startups. Arranca oculto; el JS lo
+     muestra solo mientras falte tiempo y si no se cerro en esta visita. -->
+<aside class="deadline" id="deadline" hidden>
+  <button type="button" class="deadline__x" id="deadlineClose">
+    <span class="sr-only" data-i18n="form.close">Cerrar</span>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <p class="eyebrow eyebrow--mint" data-i18n="dl.title">La convocatoria cierra en</p>
+  <div class="deadline__clock">
+    <span><b data-dl="d">00</b><small data-i18n="dl.d">días</small></span>
+    <span><b data-dl="h">00</b><small data-i18n="dl.h">horas</small></span>
+    <span><b data-dl="m">00</b><small data-i18n="dl.m">min</small></span>
+    <span><b data-dl="s">00</b><small data-i18n="dl.s">seg</small></span>
+  </div>
+  <a class="btn btn--gold btn--sm" href="https://www.rootgraph.ai/form/5a33714b-6521-44e0-a174-b64f85389590" target="_blank" rel="noopener" data-i18n="parte.b1">Aplicar ahora</a>
+</aside>
+
 <!-- Turnstile, el captcha de Cloudflare. Su script no entra en la carga inicial:
      lo inyecta loadTurnstile() al abrir el formulario, y api.js renderiza solo
      sobre .cf-turnstile cuando llega. -->
-<script src="i18n.js?v=52"></script>
-<script src="app.js?v=47"></script>
+<script src="i18n.js?v=53"></script>
+<script src="app.js?v=48"></script>
 </body>
 </html>

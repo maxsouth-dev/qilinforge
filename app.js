@@ -578,6 +578,41 @@ if (fmodal) {
   });
 }
 
+/* ───────────────────────── 12b. Contador de la convocatoria ─────────────────────────
+   Cierra a las 00:00 del 10/10/2026 hora Argentina. Pasada esa hora la tarjeta
+   no aparece; si el visitante la cierra, no vuelve hasta la proxima visita. */
+const DEADLINE = new Date('2026-10-10T00:00:00-03:00').getTime();
+const deadline = $('#deadline');
+
+function startDeadline() {
+  try { if (sessionStorage.getItem('qf-dl') === '0') return; } catch (e) {}
+  const cells = {};
+  $$('[data-dl]', deadline).forEach(el => cells[el.dataset.dl] = el);
+  const pad = n => String(n).padStart(2, '0');
+  let timer;
+
+  const tick = () => {
+    const left = Math.floor((DEADLINE - Date.now()) / 1000);
+    if (left <= 0) { clearInterval(timer); deadline.remove(); return false; }
+    cells.d.textContent = pad(Math.floor(left / 86400));
+    cells.h.textContent = pad(Math.floor(left / 3600) % 24);
+    cells.m.textContent = pad(Math.floor(left / 60) % 60);
+    cells.s.textContent = pad(left % 60);
+    return true;
+  };
+  if (!tick()) return;
+  timer = setInterval(tick, 1000);
+
+  // Entra despues de la intro del hero, sin pisar la primera impresion
+  setTimeout(() => { deadline.hidden = false; requestAnimationFrame(() => deadline.classList.add('on')); }, RM ? 0 : 3500);
+
+  $('#deadlineClose').addEventListener('click', () => {
+    clearInterval(timer);
+    deadline.remove();
+    try { sessionStorage.setItem('qf-dl', '0'); } catch (e) {}
+  });
+}
+
 /* ───────────────────────── 13. Boot ───────────────────────── */
 function boot() {
   applyLang(lang, false);
@@ -589,6 +624,7 @@ function boot() {
   measure();
   updateNav(scrollY);
   requestAnimationFrame(frame);
+  startDeadline();
 
   const intro = $('#intro');
   const reveal = () => {

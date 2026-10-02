@@ -112,6 +112,13 @@ es: {
   "parte.b3": "Explorar sponsorship",
   "parte.open": "Convocatoria: 9 sept – 9 oct 2026",
 
+  /* Contador de cierre de la convocatoria, ver <aside class="deadline"> */
+  "dl.title": "La convocatoria cierra en",
+  "dl.d": "días",
+  "dl.h": "horas",
+  "dl.m": "min",
+  "dl.s": "seg",
+
   /* Formularios de Instituciones y Sponsors, ver el <dialog class="fmodal"> */
   "form.i.eyebrow": "Instituciones",
   "form.i.title": "Sumar tu institución",
@@ -281,6 +288,13 @@ en: {
   "parte.b3": "Explore sponsorship",
   "parte.open": "Open call: Sept 9 – Oct 9, 2026",
 
+  /* Open call countdown, see <aside class="deadline"> */
+  "dl.title": "Applications close in",
+  "dl.d": "days",
+  "dl.h": "hours",
+  "dl.m": "min",
+  "dl.s": "sec",
+
   /* Institutions and Sponsors forms, see <dialog class="fmodal"> */
   "form.i.eyebrow": "Institutions",
   "form.i.title": "Join as institution",
@@ -449,6 +463,13 @@ zh: {
   "parte.d3": "如果贵公司或品牌希望与一项具有真实国际影响力的高价值举措建立联系，这里有你的席位。",
   "parte.b3": "了解赞助方案",
   "parte.open": "报名期：2026年9月9日 – 10月9日",
+
+  /* 报名截止倒计时，见 <aside class="deadline"> */
+  "dl.title": "距报名截止还有",
+  "dl.d": "天",
+  "dl.h": "时",
+  "dl.m": "分",
+  "dl.s": "秒",
 
   /* 机构与赞助商表单，见 <dialog class="fmodal"> */
   "form.i.eyebrow": "机构",
